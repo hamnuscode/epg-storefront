@@ -12,9 +12,9 @@ export const hero = {
   body:
     "Eastern Pro Gear designs and manufactures premium sports equipment, apparel, and accessories trusted by brands, teams, retailers, and athletes worldwide.",
   cards: [
-    { title: "For Champions", description: "Competition-grade equipment trusted on the world stage.", image: assets.sportTiles[1].image, href: "/collection" },
-    { title: "For Athletes", description: "Built to take a beating, session after session.", image: assets.sportTiles[0].image, href: "/men" },
-    { title: "For Leagues", description: "Team kit and bulk manufacturing, fully customisable.", image: assets.sportTiles[2].image, href: "/custom" },
+    { title: "For Champions", description: "Designs and manufactures premium sports equipment, apparel, and accessories.", image: assets.sportTiles[1].image, href: "/collection" },
+    { title: "For Athletes", description: "Designs and manufactures premium sports equipment, apparel, and accessories.", image: assets.sportTiles[0].image, href: "/men" },
+    { title: "For Leagues", description: "Designs and manufactures premium sports equipment, apparel, and accessories.", image: assets.sportTiles[2].image, href: "/custom" },
   ],
 } as const;
 
@@ -24,20 +24,13 @@ export const gearFilters = ["Best Seller", "New Arrivals"] as const;
 export const forgexTabs = ["Golf", "Baseball", "Boxing", "MMA"] as const;
 
 /** Find Your Gear — Figma shows 13 tiles across a staggered grid. */
-export const gearProducts: Product[] = [
-  { id: "pro-batting-gloves", name: "Pro Batting Gloves", price: 89.99, image: assets.products[0], category: "baseball" },
-  { id: "series-2-gloves", name: "Series 2 Gloves", price: 69.99, image: assets.products[1], category: "baseball" },
-  { id: "grip-golf-glove", name: "Grip Golf Glove", price: 49.99, image: assets.products[2], category: "golf" },
-  { id: "tour-glove", name: "Tour Glove", price: 59.99, image: assets.products[3], category: "golf" },
-  { id: "shin-guards", name: "Shin Guards", price: 89.99, image: assets.products[4], category: "martial-arts" },
-  { id: "pro-shin-guard", name: "Pro Shin Guard", price: 79.99, image: assets.products[5], category: "martial-arts" },
-  { id: "elite-shin-guard", name: "Elite Shin Guard", price: 94.99, image: assets.products[6], category: "mma" },
-  { id: "guard-pro", name: "Guard Pro", price: 84.99, image: assets.products[7], category: "mma" },
-  { id: "head-guard-blue", name: "Head Guard", price: 119.99, image: assets.products[8], category: "boxing" },
-  { id: "head-guard-pro", name: "Head Guard Pro", price: 129.99, image: assets.products[9], category: "boxing" },
-  { id: "head-guard-gold", name: "Head Guard Gold", price: 139.99, image: assets.products[10], category: "martial-arts" },
-  { id: "head-guard-elite", name: "Head Guard Elite", price: 124.99, image: assets.products[11], category: "martial-arts" },
-];
+export const gearProducts: Product[] = assets.products.map((image, i) => ({
+  id: `shin-guards-${i + 1}`,
+  name: "Shin Gaurds",
+  price: 69.99,
+  image,
+  category: "martial-arts" as const,
+}));
 
 export const featuredProducts = gearProducts;
 

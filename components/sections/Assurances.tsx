@@ -27,22 +27,22 @@ const ICONS: Record<string, React.ReactNode> = {
 /** Figma: "Frame 427321613" (1440x599) — three-up reassurance band. */
 export function Assurances() {
   return (
-    <section aria-label="Why shop with us" className="bg-surface py-16 md:py-20">
+    <section aria-label="Why shop with us" className="bg-surface py-16 md:py-24">
       <Container>
         <ul className="grid gap-10 text-center md:grid-cols-3">
           {assurances.map((item) => (
             <li key={item.title} className="flex flex-col items-center gap-4">
               <svg
-                width="40" height="40" viewBox="0 0 24 24" fill="none"
+                width="34" height="34" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                 aria-hidden className="text-white"
               >
                 {ICONS[item.icon]}
               </svg>
-              <h3 className="font-sans text-base font-semibold tracking-[-0.02em] text-white">
+              <h3 className="font-sans text-lg font-semibold tracking-[-0.02em] text-white">
                 {item.title}
               </h3>
-              <p className="max-w-[280px] font-sans text-xs leading-[1.6] text-white/50">
+              <p className="max-w-[240px] font-sans text-[11px] leading-[1.65] text-white/50">
                 {item.body}
               </p>
             </li>

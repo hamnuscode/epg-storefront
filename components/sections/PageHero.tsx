@@ -63,12 +63,12 @@ export function PageHero({
           <ButtonLink
             href={primaryCta.href}
             size="lg"
-            className="bg-white bg-none text-surface hover:bg-white/90"
+            
           >
             {primaryCta.label}
           </ButtonLink>
           {secondaryCta && (
-            <ButtonLink href={secondaryCta.href} size="lg" variant="ghost" className="text-white">
+            <ButtonLink href={secondaryCta.href} size="lg" variant="outline">
               {secondaryCta.label}
             </ButtonLink>
           )}

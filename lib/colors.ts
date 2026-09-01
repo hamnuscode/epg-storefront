@@ -8,18 +8,28 @@
 export const colors = {
   surface: {
     DEFAULT: "#0c0c0c",
-    raised: "#191919",
+    raised: "#141414",
     overlay: "#232323",
     muted: "#323232",
     light: "#ffffff",
-    lightAlt: "#f7f7f7",
+    lightAlt: "#ebebeb",
+  },
+  /** Hero, navbar and footer ground. Sampled from the Figma render. */
+  navy: {
+    900: "#102038",
+    800: "#1b2a40",
+    700: "#253651",
+    600: "#33405a",
+    card: "#304858",
   },
   brand: {
     400: "#579ada",
     500: "#468dd2",
     600: "#2e79be",
   },
-  accent: "#b8ff00",
+  /** Gold. "Champions.", card arrows, active carousel dash, jersey trim. */
+  accent: "#ffd850",
+  accentDim: "#b89a2e",
   line: { DEFAULT: "#292929", strong: "#3e3e3e", light: "#d1d1d1" },
   semantic: {
     danger: "#de2e41",

@@ -9,13 +9,13 @@ export const assets = {
   logo: "/images/5dbe10cbda6c.webp",
 
   /** Hero: boxer wrapping hands, blue hoodie (Figma: Alt 1 / image 55). */
-  heroBoxer: "/images/7f229d688962.webp",
+  heroBoxer: "/images/b6926a60c114.webp",
 
   /** Shop by Category — the three tiles, in design order. */
   categoryTiles: [
     { image: "/images/469a0f939a35.webp", label: "MOUTH GUARD" },
     { image: "/images/cb376d135e1e.webp", label: "GOLF POLO SHIRT" },
-    { image: "/images/40ecefb7f55b.webp", label: "RED BOXING GLOVES" },
+    { image: "/images/0a3481eba5fc.webp", label: "RED BOXING GLOVES" },
   ],
 
   /** OFF PITCH / ON PITCH — two athletes facing off over a dark arena. */
@@ -36,11 +36,9 @@ export const assets = {
   ],
 
   /** Find Your Gear — the white-on-dark product shots. */
-  products: [
-    "/images/f55819bbf346.webp", "/images/ea4477056470.webp", "/images/d8fa2ba672eb.webp", "/images/fb7e8da83dc3.webp",
-    "/images/c7682fc3e5b6.webp", "/images/00bea685790f.webp", "/images/b6926a60c114.webp", "/images/80d0756b635c.webp",
-    "/images/876166789aa3.webp", "/images/78c8fef2b389.webp", "/images/52dc8accd641.webp", "/images/b9b8250ad1f0.webp",
-  ],
+  /** Find Your Gear repeats a single shin-guard shot across the grid,
+   *  exactly as the frame does. */
+  products: Array.from({ length: 13 }, () => "/images/00bea685790f.webp"),
 
   /** Forgex customiser: the jersey and its swatch patterns. */
   forgexJersey: "/images/e2d93c599ccf.webp",
@@ -51,6 +49,9 @@ export const assets = {
 
   /** Testimonial avatar. */
   avatar: "/images/88dc9d54783b.webp",
+
+  /** Stacked faces above the testimonial quote. */
+  testimonialAvatars: ["/images/204f51c73704.webp", "/images/2270a2e8782e.webp", "/images/230c0bb143d2.webp"],
 
   /** Category page heroes, by slug. */
   categoryHeroes: {

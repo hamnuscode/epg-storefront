@@ -7,21 +7,32 @@
    real type ramp. See lib/typography.ts for the original→normalized map.
 --------------------------------------------------------------------------- */
 @theme {
-  /* Surfaces — twelve near-identical Figma greys collapsed to four steps */
-  --color-surface: #0c0c0c;          /* page ground, 135 uses */
-  --color-surface-raised: #191919;   /* cards on dark */
+  /* Surfaces — sampled from the Figma render, not the raw fill list.
+     The page alternates a near-black ground with deep-navy hero and footer
+     bands; the twelve near-identical greys collapse to four steps. */
+  --color-surface: #0c0c0c;          /* section ground between bands */
+  --color-surface-raised: #141414;   /* product tiles */
   --color-surface-overlay: #232323;  /* menus, sheets */
-  --color-surface-muted: #323232;    /* inset wells, 48 uses */
-  --color-surface-light: #ffffff;    /* Forgex + Testimonial bands */
-  --color-surface-light-alt: #f7f7f7;
+  --color-surface-muted: #323232;    /* inset wells */
+  --color-surface-light: #ffffff;    /* Forgex + testimonial bands */
+  --color-surface-light-alt: #ebebeb;/* active pill on the light band */
 
-  /* Brand — the "Rami blue grad" named style */
+  /* Navy — the hero, nav and footer ground */
+  --color-navy-900: #102038;
+  --color-navy-800: #1b2a40;
+  --color-navy-700: #253651;
+  --color-navy-600: #33405a;
+  --color-navy-card: #304858;        /* Shop by Category tile ground */
+
+  /* Brand blue — the "Rami blue grad" named style */
   --color-brand-400: #579ada;
   --color-brand-500: #468dd2;
   --color-brand-600: #2e79be;
 
-  /* Accent */
-  --color-accent: #b8ff00;
+  /* Accent — gold. Carries "Champions.", the card arrows, the active
+     carousel dash and the jersey trim. */
+  --color-accent: #ffd850;
+  --color-accent-dim: #b89a2e;
 
   /* Lines */
   --color-line: #292929;

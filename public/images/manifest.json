@@ -2,321 +2,1408 @@
   "7f229d68896230ee9332a076c89760fdffef3caf": {
     "file": "/images/7f229d688962.webp",
     "node": "image 55",
-    "area": 1311840
+    "area": 1311840,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "b6926a60c1145faf3bca6c2f50d093bd97ac8e9f": {
     "file": "/images/b6926a60c114.webp",
     "node": "image 55",
-    "area": 1311840
+    "area": 1311840,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "9fbd54aeb0413f2e3d5a47a28b177872cf9e3513": {
     "file": "/images/9fbd54aeb041.webp",
     "node": "image 55",
-    "area": 1311840
+    "area": 1311840,
+    "frames": [
+      "Home"
+    ]
   },
   "baab73264de4a652169bef26d984bb3b43270111": {
     "file": "/images/baab73264de4.webp",
     "node": "2",
-    "area": 1311840
+    "area": 1311840,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "9077efeaad61387bf2ceddaa172672621995c99a": {
     "file": "/images/9077efeaad61.webp",
     "node": "2",
-    "area": 1311840
+    "area": 1311840,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "80d0756b635cec6b646d42625d5656614456a07a": {
     "file": "/images/80d0756b635c.webp",
     "node": "image 11",
-    "area": 3744
+    "area": 3744,
+    "frames": [
+      "Home",
+      "Product Page",
+      "Checkout",
+      "Martial Arts",
+      "Baseball",
+      "Golf",
+      "Men",
+      "404",
+      "Women",
+      "Kids",
+      "Collection",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Checkout - Mob",
+      "Kids - Mob",
+      "Men - Mob",
+      "Martial Arts - Mob",
+      "404 - Mob",
+      "About Us",
+      "About - mob"
+    ]
   },
   "555d5b8514dc1e739aafb1cde8a1d25f59001cf2": {
     "file": "/images/555d5b8514dc.webp",
     "node": "image 11",
-    "area": 3744
+    "area": 3744,
+    "frames": [
+      "Home",
+      "Product Page",
+      "Checkout",
+      "Martial Arts",
+      "Baseball",
+      "Golf",
+      "Men",
+      "404",
+      "Women",
+      "Kids",
+      "Collection",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Checkout - Mob",
+      "Kids - Mob",
+      "Men - Mob",
+      "Martial Arts - Mob",
+      "404 - Mob",
+      "About Us",
+      "About - mob"
+    ]
   },
   "5dbe10cbda6c822028efa40503ae344d5ead65a6": {
     "file": "/images/5dbe10cbda6c.webp",
     "node": "image 11",
-    "area": 3744
+    "area": 3744,
+    "frames": [
+      "Home",
+      "Product Page",
+      "Checkout",
+      "Martial Arts",
+      "Baseball",
+      "Golf",
+      "Men",
+      "404",
+      "Women",
+      "Kids",
+      "Collection",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Checkout - Mob",
+      "Kids - Mob",
+      "Men - Mob",
+      "Martial Arts - Mob",
+      "404 - Mob",
+      "About Us",
+      "About - mob"
+    ]
   },
   "319435dd33272af392f044a54fa2aa05824a836a": {
     "file": "/images/319435dd3327.webp",
     "node": "image 61",
-    "area": 1313556
+    "area": 1313556,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "78c8fef2b389bed88bb6c6cc7181a4ff6335133e": {
     "file": "/images/78c8fef2b389.webp",
     "node": "image 61",
-    "area": 1313556
+    "area": 1313556,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "f77537047a09c50e54ce71ca3b4001936de54617": {
     "file": "/images/f77537047a09.webp",
     "node": "image 61",
-    "area": 1313556
+    "area": 1313556,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "03d6510061dd974c2fd049068c20813e152cc3eb": {
     "file": "/images/03d6510061dd.webp",
     "node": "image 61",
-    "area": 1313556
+    "area": 1313556,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "6069f9e8a1dd49a6850a69bbd205ec3bd48c68ca": {
     "file": "/images/6069f9e8a1dd.webp",
     "node": "3",
-    "area": 1358635
+    "area": 1358635,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "1e0bc846bde3cd90e378ec88d1d1c44a5e031a67": {
     "file": "/images/1e0bc846bde3.webp",
     "node": "3",
-    "area": 1358635
+    "area": 1358635,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "cbd753d627d062ab2fb47a70854524de026b0d16": {
     "file": "/images/cbd753d627d0.webp",
     "node": "3",
-    "area": 1358635
+    "area": 1358635,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "8433e4fe10b7e6d1f900480f93a2917f12df68bb": {
     "file": "/images/8433e4fe10b7.webp",
     "node": "3",
-    "area": 1358635
+    "area": 1358635,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "80551ee36a831b39840a16c3baf838f6b45dbe24": {
     "file": "/images/80551ee36a83.webp",
     "node": "3",
-    "area": 1358635
+    "area": 1358635,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "50e914a73257de2505cf1465046ebebc70724de2": {
     "file": "/images/50e914a73257.webp",
     "node": "3",
-    "area": 1358635
+    "area": 1358635,
+    "frames": [
+      "Home"
+    ]
   },
   "498302a449ea853be078c5ecb9aed87f23531f3f": {
     "file": "/images/498302a449ea.webp",
     "node": "image 10",
-    "area": 14065
+    "area": 14065,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "7f9a6bfed5f34cf52c73fc8a929c42563463d453": {
     "file": "/images/7f9a6bfed5f3.webp",
     "node": "image 10",
-    "area": 14065
+    "area": 14065,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "2c431db972fee0230c8f3768278b92ce8a20bd2f": {
     "file": "/images/2c431db972fe.webp",
     "node": "image 10",
-    "area": 14065
+    "area": 14065,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "dc5a37a2d841e610deece33d91215da5a2c5ff30": {
     "file": "/images/dc5a37a2d841.webp",
     "node": "image 10",
-    "area": 14065
+    "area": 14065,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "fb7e8da83dc3a5723c5c9dc5d2b5f26079929c7a": {
     "file": "/images/fb7e8da83dc3.webp",
     "node": "image 58",
-    "area": 85264
+    "area": 85264,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "7bc9c009c308116ab05e29b3b4206db76222771c": {
     "file": "/images/7bc9c009c308.webp",
     "node": "image 60",
-    "area": 146689
+    "area": 146689,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "488a25dcf457909d450522298fe8e3e5aefe901e": {
     "file": "/images/488a25dcf457.webp",
     "node": "image 60",
-    "area": 146689
+    "area": 146689,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "469a0f939a351ea669b4bb6a316fd37468306942": {
     "file": "/images/469a0f939a35.webp",
     "node": "image 59",
-    "area": 50176
+    "area": 50176,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "cb376d135e1e86f0c5773329413d3db7724a0d1c": {
     "file": "/images/cb376d135e1e.webp",
     "node": "image 59",
-    "area": 97969
+    "area": 97969,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "40ecefb7f55b7e1e5ce06cbfcbb8574eea80cfab": {
     "file": "/images/40ecefb7f55b.webp",
     "node": "image 58",
-    "area": 85264
+    "area": 85264,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "0a3481eba5fc80b24a54238fb20463d62413a19f": {
     "file": "/images/0a3481eba5fc.webp",
     "node": "image 59",
-    "area": 167281
+    "area": 167281,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "c186be80630986af13b341df1c5394a32540720e": {
     "file": "/images/c186be806309.webp",
     "node": "image 59",
-    "area": 167281
+    "area": 167281,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "a1531c0a75ec461e4484116eee80c7f40b4c843e": {
     "file": "/images/a1531c0a75ec.webp",
     "node": "image 59",
-    "area": 167281
+    "area": 167281,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "eb7f7495b72e7a823663e539cf95d1da02a4bb80": {
     "file": "/images/eb7f7495b72e.webp",
     "node": "image 58",
-    "area": 85264
+    "area": 85264,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "52dc8accd641bb055e916faba62387656e60f719": {
     "file": "/images/52dc8accd641.webp",
     "node": "image 59",
-    "area": 149769
+    "area": 149769,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "ca92b659d6da1ab84abcb86f71e4ddb2ede62878": {
     "file": "/images/ca92b659d6da.webp",
     "node": "image 59",
-    "area": 149769
+    "area": 149769,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Product Page - Mob"
+    ]
   },
   "1be4944c0d0395114d013eeec9c3df9269197f25": {
     "file": "/images/1be4944c0d03.webp",
     "node": "image 66",
-    "area": 1167020
+    "area": 1167020,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "1bcda0d00fa17da8cf1c9855caacaf63b97a508c": {
     "file": "/images/1bcda0d00fa1.webp",
     "node": "pexels-rdne-7187989 2",
-    "area": 349928
+    "area": 349928,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "0f79b854f8dec44ebe44925de081c9b654cfae2d": {
     "file": "/images/0f79b854f8de.webp",
     "node": "pexels-rdne-7187989 1",
-    "area": 342543
+    "area": 342543,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "e6a90fc684c148c0f455bd0dd8337568ad05849b": {
     "file": "/images/e6a90fc684c1.webp",
     "node": "Banner Comp",
-    "area": 986325
+    "area": 986325,
+    "frames": [
+      "Home"
+    ]
   },
   "bb567a4226196f0ca4e8c66fa7bb3f3f3fe7d399": {
     "file": "/images/bb567a422619.webp",
     "node": "image 76",
-    "area": 89647
+    "area": 89647,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "bd78f38bcf083194216974e9c673c862a53fe869": {
     "file": "/images/bd78f38bcf08.webp",
     "node": "image 77",
-    "area": 99684
+    "area": 99684,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "8afd431b4ccd9d499113e0a14abbf63073f010cf": {
     "file": "/images/8afd431b4ccd.webp",
     "node": "Rectangle 35",
-    "area": 216298
+    "area": 216298,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "79511992c4d9a944f56ba84520bd8368027ce4fb": {
     "file": "/images/79511992c4d9.webp",
     "node": "Rectangle 36",
-    "area": 216298
+    "area": 216298,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "e1587462abb157f9cf0a204dd251c119869e52d8": {
     "file": "/images/e1587462abb1.webp",
     "node": "Rectangle 37",
-    "area": 216298
+    "area": 216298,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "6636700b7766457dd05c474def55679608c72995": {
     "file": "/images/6636700b7766.webp",
     "node": "Rectangle 38",
-    "area": 216298
+    "area": 216298,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "879715922b7bf21b5f7e455dd4713e83a93a40ff": {
     "file": "/images/879715922b7b.webp",
     "node": "Rectangle 39",
-    "area": 216298
+    "area": 216298,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "f55819bbf3464dc3a6ff33106812373306009df0": {
     "file": "/images/f55819bbf346.webp",
     "node": "image 50",
-    "area": 127464
+    "area": 127464,
+    "frames": [
+      "Home"
+    ]
   },
   "ea44770564706f74fbe45b23d570187cfb10d389": {
     "file": "/images/ea4477056470.webp",
     "node": "image 50",
-    "area": 127464
+    "area": 127464,
+    "frames": [
+      "Home"
+    ]
   },
   "876166789aa30d5d0e58f18d9c9a915e8c586e7a": {
     "file": "/images/876166789aa3.webp",
     "node": "image 51",
-    "area": 105840
+    "area": 105840,
+    "frames": [
+      "Home",
+      "Martial Arts",
+      "Baseball",
+      "Golf",
+      "Men",
+      "Women",
+      "Kids",
+      "Collection"
+    ]
   },
   "33935de05351c14dc0c4f71e1108e1d1b9823d58": {
     "file": "/images/33935de05351.webp",
     "node": "image 51",
-    "area": 105840
+    "area": 105840,
+    "frames": [
+      "Home",
+      "Martial Arts",
+      "Baseball",
+      "Golf",
+      "Men",
+      "Women",
+      "Kids",
+      "Collection"
+    ]
   },
   "c7682fc3e5b60aa01be3c08fea76378f31ee938f": {
     "file": "/images/c7682fc3e5b6.webp",
     "node": "image 52",
-    "area": 142129
+    "area": 142129,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Kids - Mob",
+      "Men - Mob",
+      "Martial Arts - Mob"
+    ]
   },
   "00bea685790f3a5566e72d6d12c6758d9eeb6cac": {
     "file": "/images/00bea685790f.webp",
     "node": "image 52",
-    "area": 142129
+    "area": 142129,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Kids - Mob",
+      "Men - Mob",
+      "Martial Arts - Mob"
+    ]
   },
   "9b00e06bfb2de061263ac30e1ce39ba97e3b0d8d": {
     "file": "/images/9b00e06bfb2d.webp",
     "node": "after hover",
-    "area": 114244
+    "area": 114244,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Kids - Mob",
+      "Men - Mob",
+      "Martial Arts - Mob"
+    ]
   },
   "c574a60d3b2e038d669ed81c68911fab4541d4aa": {
     "file": "/images/c574a60d3b2e.webp",
     "node": "Ellipse 9",
-    "area": 2561
+    "area": 2561,
+    "frames": [
+      "Home",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob"
+    ]
   },
   "9d19d1ee633f2c8a7c173335b8041095dfc99215": {
     "file": "/images/9d19d1ee633f.webp",
     "node": "Ellipse 5",
-    "area": 2561
+    "area": 2561,
+    "frames": [
+      "Home",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob"
+    ]
   },
   "39927cec13fac054499d3086222535eed9645156": {
     "file": "/images/39927cec13fa.webp",
     "node": "Ellipse 6",
-    "area": 2561
+    "area": 2561,
+    "frames": [
+      "Home",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob"
+    ]
   },
   "d8fa2ba672ebeb317bc9d8bcee4222f6a0bddada": {
     "file": "/images/d8fa2ba672eb.webp",
     "node": "Ellipse 7",
-    "area": 2561
+    "area": 2561,
+    "frames": [
+      "Home",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob"
+    ]
   },
   "b9b8250ad1f0334482312e1d33c64ba6b2df24b0": {
     "file": "/images/b9b8250ad1f0.webp",
     "node": "Ellipse 10",
-    "area": 2561
+    "area": 2561,
+    "frames": [
+      "Home",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob"
+    ]
   },
   "ee8c738314e9734039424cdbf6ef2195cb8a4b08": {
     "file": "/images/ee8c738314e9.webp",
     "node": "Ellipse 8",
-    "area": 2561
+    "area": 2561,
+    "frames": [
+      "Home",
+      "Custom",
+      "Home - Mob",
+      "Sidebar - Mob",
+      "Custom - Mob"
+    ]
   },
   "e2d93c599ccfe7e877e309be8364b57d03c4dcca": {
     "file": "/images/e2d93c599ccf.webp",
     "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
-    "area": 409738
+    "area": 409738,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "8e5a091813ea17504e998178a9c83881a268b110": {
     "file": "/images/8e5a091813ea.webp",
     "node": "Frame 205",
-    "area": 1296
+    "area": 1296,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "c8cac2c365860e1c06aa8e09257b9f62a80b6403": {
     "file": "/images/c8cac2c36586.webp",
     "node": "Frame 207",
-    "area": 1296
+    "area": 1296,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "b88f617adbf84b8897c80b07ab45e8226b752e20": {
     "file": "/images/b88f617adbf8.webp",
     "node": "Frame 206",
-    "area": 1296
+    "area": 1296,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "88dc9d54783b0eb16b001b63833a2e5cc596d5ee": {
     "file": "/images/88dc9d54783b.webp",
     "node": "Frame 208",
-    "area": 1296
+    "area": 1296,
+    "frames": [
+      "Home",
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
   },
   "fd62556191833495dcab497aae735e77b6db3fc6": {
     "file": "/images/fd6255619183.webp",
     "node": "Banner",
-    "area": 989280
+    "area": 989280,
+    "frames": [
+      "Home"
+    ]
+  },
+  "88cc857747c426ebecbbc01fdbd8b5672d5c0b36": {
+    "file": "/images/88cc857747c4.webp",
+    "node": "Rectangle 11",
+    "area": 408277,
+    "frames": [
+      "Product Page",
+      "Product Page - Mob"
+    ]
+  },
+  "f5310b9795cb1e95575214895393d4149ed7f6f7": {
+    "file": "/images/f5310b9795cb.webp",
+    "node": "image 24",
+    "area": 1800,
+    "frames": [
+      "Checkout",
+      "Checkout - Mob"
+    ]
+  },
+  "aa1f10f88da696b4e45b04e9707c2903365c2913": {
+    "file": "/images/aa1f10f88da6.webp",
+    "node": "image 25",
+    "area": 1273,
+    "frames": [
+      "Checkout",
+      "Checkout - Mob"
+    ]
+  },
+  "b6faae637602506829fc44f87b9396e5225b5037": {
+    "file": "/images/b6faae637602.webp",
+    "node": "image 26",
+    "area": 1626,
+    "frames": [
+      "Checkout",
+      "Checkout - Mob"
+    ]
+  },
+  "c149e2c542d3fa03c6e4dadb2bf045c5402f23c9": {
+    "file": "/images/c149e2c542d3.webp",
+    "node": "image 28",
+    "area": 925,
+    "frames": [
+      "Checkout",
+      "Checkout - Mob"
+    ]
+  },
+  "5f521f55047412007058bb87f084e448d41753a6": {
+    "file": "/images/5f521f550474.webp",
+    "node": "image 30",
+    "area": 6042,
+    "frames": [
+      "Checkout",
+      "Checkout - Mob"
+    ]
+  },
+  "c12456d3cee2e5de301c6f55e57b02d3107d7402": {
+    "file": "/images/c12456d3cee2.webp",
+    "node": "image 30",
+    "area": 6042,
+    "frames": [
+      "Checkout",
+      "Checkout - Mob"
+    ]
+  },
+  "0fbc8158251d48a62a41fde2adb79f3014e30c27": {
+    "file": "/images/0fbc8158251d.webp",
+    "node": "image 65",
+    "area": 1094400,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "630ca9e05f7dc6739519a7bf6f0c68dca1699943": {
+    "file": "/images/630ca9e05f7d.webp",
+    "node": "Background",
+    "area": 889350,
+    "frames": [
+      "Martial Arts",
+      "Baseball"
+    ]
+  },
+  "005a67db1b09ead2288d47c9fe76f5751cf55276": {
+    "file": "/images/005a67db1b09.webp",
+    "node": "Background",
+    "area": 889350,
+    "frames": [
+      "Martial Arts",
+      "Baseball",
+      "Baseball - Mob"
+    ]
+  },
+  "348040913c255beb502bf054b9f692847fc61823": {
+    "file": "/images/348040913c25.webp",
+    "node": "Background",
+    "area": 889350,
+    "frames": [
+      "Martial Arts"
+    ]
+  },
+  "cb7c051a07932d531a9aa26e50d9116cecc56d88": {
+    "file": "/images/cb7c051a0793.webp",
+    "node": "Background",
+    "area": 889350,
+    "frames": [
+      "Martial Arts"
+    ]
+  },
+  "230c0bb143d2b0867167b79925f17d1a7f1e96a8": {
+    "file": "/images/230c0bb143d2.webp",
+    "node": "Object",
+    "area": 5291,
+    "frames": [
+      "Martial Arts"
+    ]
+  },
+  "b6a49378a051758d6c6d6bb87eb063dda7db8c95": {
+    "file": "/images/b6a49378a051.webp",
+    "node": "image 66",
+    "area": 36112,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "3cb4e3a8ae876018816cb567a37f2186bb5fd755": {
+    "file": "/images/3cb4e3a8ae87.webp",
+    "node": "image 66",
+    "area": 36112,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "69e526867aa3e354b85510bd12add8054c9971bf": {
+    "file": "/images/69e526867aa3.webp",
+    "node": "image 66",
+    "area": 36112,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "8539d7e3f4e855c1bfb3100166ca88c879851af0": {
+    "file": "/images/8539d7e3f4e8.webp",
+    "node": "image 66",
+    "area": 36112,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "87b4c5b12b39cd9a27d8a86defa76f98f47f88c5": {
+    "file": "/images/87b4c5b12b39.webp",
+    "node": "image 66",
+    "area": 27824,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "5909ed35a6c287adc7344dc6ba543d672e3d567e": {
+    "file": "/images/5909ed35a6c2.webp",
+    "node": "image 66",
+    "area": 27824,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "f2da60be3cf60b441632e4df3600d734b543db2d": {
+    "file": "/images/f2da60be3cf6.webp",
+    "node": "image 66",
+    "area": 32412,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "3bc1e44b126fb0d4cff08fee62552b4bfe1a6250": {
+    "file": "/images/3bc1e44b126f.webp",
+    "node": "image 66",
+    "area": 32412,
+    "frames": [
+      "Martial Arts",
+      "Martial Arts - Mob"
+    ]
+  },
+  "afe7618bb68f9e90215d0043dff676eb7751de6c": {
+    "file": "/images/afe7618bb68f.webp",
+    "node": "image 65",
+    "area": 1094400,
+    "frames": [
+      "Baseball",
+      "Baseball - Mob"
+    ]
+  },
+  "193746e4e27f58389f919bb0372ce093fabbdb6d": {
+    "file": "/images/193746e4e27f.webp",
+    "node": "image 68",
+    "area": 618320,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Kids",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Collection - Mob"
+    ]
+  },
+  "319085dbdc815aa641db36928ef3728f4d69837f": {
+    "file": "/images/319085dbdc81.webp",
+    "node": "image 68",
+    "area": 618320,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Kids",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Collection - Mob",
+      "Kids - Mob"
+    ]
+  },
+  "c4d108649e20a413095b94dc68e4b2c77de2d2bf": {
+    "file": "/images/c4d108649e20.webp",
+    "node": "image 68",
+    "area": 696200,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Women",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Collection - Mob"
+    ]
+  },
+  "7a74f883ba549c4b2fff15eeb0a25e2dfdbdbe20": {
+    "file": "/images/7a74f883ba54.webp",
+    "node": "image 68",
+    "area": 696200,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Women",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob"
+    ]
+  },
+  "286cbe3b7b66976206404a6574beb51f30a527b6": {
+    "file": "/images/286cbe3b7b66.webp",
+    "node": "image 68",
+    "area": 696200,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Men",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Men - Mob"
+    ]
+  },
+  "dd328aab9ae92b318f344bd8c62791bbf7efdf49": {
+    "file": "/images/dd328aab9ae9.webp",
+    "node": "image 68",
+    "area": 696200,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Men",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Women - Mob",
+      "Collection - Mob",
+      "Men - Mob"
+    ]
+  },
+  "2270a2e8782e433eecddebaa831745fd0a2135ad": {
+    "file": "/images/2270a2e8782e.webp",
+    "node": "image 68",
+    "area": 696200,
+    "frames": [
+      "Baseball",
+      "Golf",
+      "Men",
+      "Collection",
+      "Baseball - Mob",
+      "Golf - Mob",
+      "Collection - Mob",
+      "Men - Mob"
+    ]
+  },
+  "12860fe2489bfbc422f23b2fa08b38bbe6cf141a": {
+    "file": "/images/12860fe2489b.webp",
+    "node": "image 65",
+    "area": 1094400,
+    "frames": [
+      "Golf",
+      "Men",
+      "404",
+      "Women",
+      "Kids",
+      "Collection",
+      "Golf - Mob",
+      "404 - Mob",
+      "About Us"
+    ]
+  },
+  "f0089f161820fbcd35354b96109c705db7583c29": {
+    "file": "/images/f0089f161820.webp",
+    "node": "image 67",
+    "area": 889350,
+    "frames": [
+      "Golf"
+    ]
+  },
+  "2d36f9b91a2e77fd51561c33acb66f661135af27": {
+    "file": "/images/2d36f9b91a2e.webp",
+    "node": "image 67",
+    "area": 889350,
+    "frames": [
+      "Golf",
+      "Golf - Mob"
+    ]
+  },
+  "86f34368631c0ef02a2231af5ea1061bf7b05566": {
+    "file": "/images/86f34368631c.webp",
+    "node": "image 70",
+    "area": 1109570,
+    "frames": [
+      "Collection",
+      "Collection - Mob",
+      "About - mob"
+    ]
+  },
+  "0444658b80a86209b08c23f9b2ee591860c82657": {
+    "file": "/images/0444658b80a8.webp",
+    "node": "Lights Off",
+    "area": 1306987,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "011a8fd181c092c4d8e79517c6e1d5bc3a54ad5e": {
+    "file": "/images/011a8fd181c0.webp",
+    "node": "Lights On",
+    "area": 1306080,
+    "frames": [
+      "Custom"
+    ]
+  },
+  "f72c616e1e5a63698fa3890fb47fab1cebbe10d3": {
+    "file": "/images/f72c616e1e5a.webp",
+    "node": "Lights On",
+    "area": 1306080,
+    "frames": [
+      "Custom"
+    ]
+  },
+  "1b5afe39fcb5cd1eef0fe68a9f49dbe18767d11a": {
+    "file": "/images/1b5afe39fcb5.webp",
+    "node": "Lights On",
+    "area": 1306080,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "cab89ba71270c88aa63c5d114d97e1c86e8da313": {
+    "file": "/images/cab89ba71270.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "7e7d88df47eb17c0587ab37c5d88a7c0e920ae73": {
+    "file": "/images/7e7d88df47eb.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "5a4734ecf2d8552adab1218bdbcc9a6c5a43daf1": {
+    "file": "/images/5a4734ecf2d8.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "f5b8b7661bb68ed3d99ab28f624e82b553357ba8": {
+    "file": "/images/f5b8b7661bb6.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "3bab6ca4d577ba17c906d7bd88af4f861b341679": {
+    "file": "/images/3bab6ca4d577.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "7fdffa743d67be59ff932cb4a289c2bcb3d1e033": {
+    "file": "/images/7fdffa743d67.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "174d273f1340fcca0f1ca53e72f8cb0ec4df0d61": {
+    "file": "/images/174d273f1340.webp",
+    "node": "Screenshot 2026-03-28 at 10.21.17 AM 1",
+    "area": 115349,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "557d8ab18dcf1de578e98d0ac160dd69292507b9": {
+    "file": "/images/557d8ab18dcf.webp",
+    "node": "image 3",
+    "area": 882,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "c775212ff0ffd05c6922e0133039b91159a68b68": {
+    "file": "/images/c775212ff0ff.webp",
+    "node": "image 51",
+    "area": 101775,
+    "frames": [
+      "Custom"
+    ]
+  },
+  "b7145d9f8df8209523e8b35a5174d5ef67bd5491": {
+    "file": "/images/b7145d9f8df8.webp",
+    "node": "image 51",
+    "area": 101775,
+    "frames": [
+      "Custom"
+    ]
+  },
+  "0707e6b2022462187b7b2dab43ed95bab6b24a66": {
+    "file": "/images/0707e6b20224.webp",
+    "node": "Image",
+    "area": 38730,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "e7f5fcf603befbd79d6956f54a43bca890993b67": {
+    "file": "/images/e7f5fcf603be.webp",
+    "node": "Image",
+    "area": 49331,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "2333fe50c11fca16d692566dc2823f150afcf3d3": {
+    "file": "/images/2333fe50c11f.webp",
+    "node": "Image",
+    "area": 49331,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "e8e1b7e46485c4bbe63e0b2bec2eb651438f9e2c": {
+    "file": "/images/e8e1b7e46485.webp",
+    "node": "Image",
+    "area": 49331,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "fa3182d16c0ea0dbd2c0b8974142147ef95a132a": {
+    "file": "/images/fa3182d16c0e.webp",
+    "node": "Image",
+    "area": 49331,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "4f1249032d1c55493e89a7646669626dc168890d": {
+    "file": "/images/4f1249032d1c.webp",
+    "node": "Image",
+    "area": 49331,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "53c864a9cc3fec8e6afdd2149615afa9e72006e4": {
+    "file": "/images/53c864a9cc3f.webp",
+    "node": "forgex-logo 2",
+    "area": 772560,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "3e82072884aaff3166ceae1a1338813fb67f1832": {
+    "file": "/images/3e82072884aa.webp",
+    "node": "Untitled design 1",
+    "area": 446566,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "204f51c7370407e792b9137e53f94d576cdeff09": {
+    "file": "/images/204f51c73704.webp",
+    "node": "Untitled design 1",
+    "area": 446566,
+    "frames": [
+      "Custom",
+      "Custom - Mob"
+    ]
+  },
+  "1d22dcc55ad35f45ab538d5f17f141f6c2c10f74": {
+    "file": "/images/1d22dcc55ad3.webp",
+    "node": "image 78",
+    "area": 218790,
+    "frames": [
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
+  },
+  "888014a3d2b7218ecbd0764f9c16d2cc233b29d4": {
+    "file": "/images/888014a3d2b7.webp",
+    "node": "image 78",
+    "area": 218790,
+    "frames": [
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
+  },
+  "db2ed140d6cf29e951c4924bbc26a0460ca1b0a2": {
+    "file": "/images/db2ed140d6cf.webp",
+    "node": "Frame 427321842",
+    "area": 270660,
+    "frames": [
+      "Home - Mob",
+      "Sidebar - Mob"
+    ]
+  },
+  "7c70386c5714fdef38c72eb0b580f8ba981ca6fe": {
+    "file": "/images/7c70386c5714.webp",
+    "node": "Lights On",
+    "area": 95976,
+    "frames": [
+      "Custom - Mob"
+    ]
+  },
+  "cb62bcf883e8d5bf31912cff7d2fe2dcd11f3c39": {
+    "file": "/images/cb62bcf883e8.webp",
+    "node": "Background",
+    "area": 351902,
+    "frames": [
+      "Martial Arts - Mob"
+    ]
+  },
+  "09500bb5907506ce295e9f7a0bd7eb2443cf120a": {
+    "file": "/images/09500bb59075.webp",
+    "node": "Background",
+    "area": 351902,
+    "frames": [
+      "Martial Arts - Mob"
+    ]
+  },
+  "d20ffc831b131e5b32890828386cd893cf8441b9": {
+    "file": "/images/d20ffc831b13.webp",
+    "node": "hero",
+    "area": 1108800,
+    "frames": [
+      "About Us",
+      "About - mob"
+    ]
+  },
+  "c065de626cba76c3aa293a6af58fd282c5cbe616": {
+    "file": "/images/c065de626cba.webp",
+    "node": "image 88",
+    "area": 722160,
+    "frames": [
+      "About Us",
+      "About - mob"
+    ]
+  },
+  "1d71098b6689318eadbef16fabd5673d81208362": {
+    "file": "/images/1d71098b6689.webp",
+    "node": "image 92",
+    "area": 816000,
+    "frames": [
+      "About Us",
+      "About - mob"
+    ]
+  },
+  "83db4c68b3604d467e8b422e3205a37bc2d5c178": {
+    "file": "/images/83db4c68b360.webp",
+    "node": "Ellipse 24",
+    "area": 7569,
+    "frames": [
+      "About Us",
+      "About - mob"
+    ]
+  },
+  "e866f7853e8d8704c882a76ef75590df1d6e4aae": {
+    "file": "/images/e866f7853e8d.webp",
+    "node": "image 94",
+    "area": 5096,
+    "frames": [
+      "About Us",
+      "About - mob"
+    ]
+  },
+  "01337295e4b9ac58e9c4846b0e07d42cbef28b4e": {
+    "file": "/images/01337295e4b9.webp",
+    "node": "image 88",
+    "area": 722160,
+    "frames": [
+      "About Us",
+      "About - mob"
+    ]
   }
 }

@@ -12,33 +12,30 @@ import { assets } from "@/lib/assets";
 import { categoryFilters, sportFilters } from "@/lib/data";
 
 /**
- * Home — Figma frame "Home" (1440x9308). Section order follows the frame:
- *   Alt 1 → Category → off on → Banner Comp → Category → Featured Products
- *   → Forgex → Testimonial → Frame 427321613 → Footer
+ * Home — Figma "Home" (1440x9308) / "Home - Mob" (390x7532). Section order
+ * follows the frame exactly.
  */
 export default function HomePage() {
   return (
     <>
       <main id="main">
         <Hero />
-
         <CategoryRail
           headingId="shop-by-category"
           title="Shop by Category"
           filters={categoryFilters}
           tiles={assets.categoryTiles}
+          tone="card"
         />
-
         <OnOffPitch />
         <TeamKit />
-
         <CategoryRail
           headingId="our-sports"
           title="Our Sports"
           filters={sportFilters}
           tiles={assets.sportTiles}
+          tone="photo"
         />
-
         <FindYourGear />
         <Forgex />
         <Testimonial />

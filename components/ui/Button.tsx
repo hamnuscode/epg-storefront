@@ -1,58 +1,62 @@
 "use client";
 
 import { forwardRef } from "react";
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "ghost" | "accent";
+/**
+ * EPG buttons are skewed parallelograms — the design slants the left and
+ * right edges rather than rounding them. The skew is applied to a pseudo
+ * background layer so the label itself stays upright and legible.
+ */
+type Variant = "solid" | "outline" | "dark" | "gold";
 type Size = "sm" | "md" | "lg";
 
+const shape =
+  "relative inline-flex items-center justify-center isolate " +
+  "before:absolute before:inset-0 before:-z-10 before:-skew-x-12 before:transition-colors " +
+  "before:[transition-timing-function:var(--ease-out-soft)]";
+
 const variants: Record<Variant, string> = {
-  // "Rami blue grad" fill
-  primary:
-    "bg-linear-135 from-brand-400 via-brand-500 to-brand-600 text-white hover:brightness-110 active:brightness-95",
-  // Pill treatment from the Category filter row (#292929 @ r24)
-  secondary:
-    "bg-line text-white hover:bg-surface-muted active:bg-line",
-  ghost:
-    "bg-transparent text-white/50 hover:text-white hover:bg-white/5 active:bg-white/10",
-  accent:
-    "bg-accent text-surface hover:brightness-105 active:brightness-95",
+  // White fill, dark label — the primary CTA on photography
+  solid: "text-surface before:bg-white hover:before:bg-white/85",
+  // Hairline outline on dark — "VIEW COLLECTION", "CUSTOM GEAR"
+  outline:
+    "text-white before:border before:border-white/70 hover:text-surface hover:before:bg-white",
+  // Black fill on the light Forgex band — "EXPLORE MORE"
+  dark: "text-white before:bg-surface hover:before:bg-surface/85",
+  gold: "text-surface before:bg-accent hover:before:bg-accent/85",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-10 px-4 text-base",
-  md: "h-10 px-4.5 text-xl", // 40px tall, 18px inline — the Figma pill
-  lg: "h-14 px-8 text-xl",
+  sm: "h-9 px-6 text-[11px]",
+  md: "h-11 px-8 text-xs",
+  lg: "h-12 px-10 text-sm",
 };
 
-const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-sans font-semibold " +
-  "tracking-[-0.03em] whitespace-nowrap transition-all duration-200 " +
-  "[transition-timing-function:var(--ease-out-soft)] " +
-  "disabled:pointer-events-none disabled:opacity-40";
+const label = "font-condensed font-semibold uppercase tracking-[0.16em] whitespace-nowrap";
+
+const base = (v: Variant, s: Size, c?: string) =>
+  cn(shape, label, variants[v], sizes[s], "disabled:pointer-events-none disabled:opacity-40", c);
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
-  /** Renders a spinner and blocks interaction. */
   loading?: boolean;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "primary", size = "md", loading, className, children, disabled, ...props }, ref) => (
+  ({ variant = "solid", size = "md", loading, className, children, disabled, ...props }, ref) => (
     <button
       ref={ref}
       disabled={disabled || loading}
       aria-busy={loading || undefined}
-      className={cn(base, variants[variant], sizes[size], className)}
+      className={base(variant, size, className)}
       {...props}
     >
       {loading && (
-        <span
-          aria-hidden
-          className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent"
-        />
+        <span aria-hidden className="mr-2 size-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" />
       )}
       {children}
     </button>
@@ -60,17 +64,19 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = "Button";
 
-export interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+/** Same shape as an internal link. */
+export function ButtonLink({
+  href, variant = "solid", size = "md", className, children, ...props
+}: {
+  href: string;
   variant?: Variant;
   size?: Size;
-}
-
-/** Same visual treatment, rendered as an anchor for real navigation. */
-export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
-  ({ variant = "primary", size = "md", className, children, ...props }, ref) => (
-    <a ref={ref} className={cn(base, variants[variant], sizes[size], className)} {...props}>
+  className?: string;
+  children: ReactNode;
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+  return (
+    <Link href={href} className={base(variant, size, className)} {...props}>
       {children}
-    </a>
-  )
-);
-ButtonLink.displayName = "ButtonLink";
+    </Link>
+  );
+}
