@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { FilterPills } from "@/components/ui/FilterPills";
@@ -103,12 +104,12 @@ export function Forgex() {
           <h3 className="font-sans text-[clamp(1.75rem,3.4vw,3rem)] font-semibold leading-[0.95] tracking-[-0.035em] text-surface">
             {forgex.title}
           </h3>
-          <a
+          <Link
             href="/custom"
             className="inline-flex h-12 items-center rounded-xl bg-surface px-8 font-condensed text-sm uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-85"
           >
             {forgex.cta}
-          </a>
+          </Link>
         </div>
       </Container>
     </section>
