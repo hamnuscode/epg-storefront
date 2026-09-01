@@ -163,4 +163,10 @@ export const productsFor = (page: CategoryPage): Product[] =>
   }));
 
 export const allProducts: Product[] = categoryPages.flatMap(productsFor);
-export const getProduct = (id: string) => allProducts.find((p) => p.id === id) ?? allProducts[0];
+/** Figma "Product Page" shows one styled item; detail pages use its shot. */
+export const PRODUCT_DETAIL_IMAGE = img("88cc857747c4");
+
+export const getProduct = (id: string) => {
+  const found = allProducts.find((p) => p.id === id) ?? allProducts[0];
+  return { ...found, name: "Muay Thai Shorts", price: 59.99, compareAtPrice: 89.99, image: PRODUCT_DETAIL_IMAGE };
+};

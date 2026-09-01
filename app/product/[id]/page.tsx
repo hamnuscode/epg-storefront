@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layouts/Navbar";
 import { Footer } from "@/components/layouts/Footer";
 import { ProductDetail } from "@/components/sections/ProductDetail";
-import { FindYourGear } from "@/components/sections/FindYourGear";
+import { RelatedProducts } from "@/components/sections/RelatedProducts";
 import { allProducts, getProduct } from "@/lib/catalog";
 
 export function generateStaticParams() {
@@ -35,7 +35,8 @@ export default async function ProductPage({
       </div>
       <main id="main">
         <ProductDetail product={product} />
-        <FindYourGear heading="You may also like" />
+        <RelatedProducts />
+        
       </main>
       <Footer />
     </>
