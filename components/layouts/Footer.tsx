@@ -28,7 +28,7 @@ export function Footer() {
           <span className="absolute left-[62%] top-[250px] h-[120px] w-[34%] -skew-x-[26deg] bg-linear-to-r from-[#101f36]/28 to-transparent" />
         </div>
 
-        <div className="mx-auto max-w-[1440px] px-6 pb-8 pt-16 md:px-14">
+        <div className="mx-auto max-w-[1440px] px-6 pb-12 pt-20 md:px-14">
           {/* Brand + columns */}
           <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
             <div className="flex flex-col gap-10">

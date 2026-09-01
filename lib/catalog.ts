@@ -64,7 +64,7 @@ export const categoryPages: CategoryPage[] = [
     categories: ["Select Category", "Head Guards", "Gloves", "Shin Guards", "Uniforms"],
     secondaryCta: true,
     product: { image: img("33935de05351"), name: "Head Guard for Training", label: "MMA", price: 69.99, compareAt: 89.99, colors: DOTS },
-    count: 8,
+    count: 9,
   },
   {
     slug: "baseball",
@@ -82,7 +82,7 @@ export const categoryPages: CategoryPage[] = [
     categories: ["Select Category", "Gloves", "Bats", "Helmets", "Cleats"],
     secondaryCta: true,
     product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Baseball", price: 69.99, compareAt: 89.99, colors: DOTS },
-    count: 8,
+    count: 9,
   },
   {
     slug: "golf",
@@ -100,7 +100,7 @@ export const categoryPages: CategoryPage[] = [
     categories: ["Select Category", "Gloves", "Apparel", "Accessories"],
     secondaryCta: true,
     product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Golf", price: 69.99, compareAt: 89.99, colors: DOTS },
-    count: 8,
+    count: 9,
   },
   {
     slug: "men",
@@ -169,7 +169,7 @@ export const categoryPages: CategoryPage[] = [
     sports: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball", "Martial Arts"],
     secondaryCta: true,
     product: { image: img("33935de05351"), name: "Head Guard for Training", label: "MMA", price: 69.99, compareAt: 89.99, colors: DOTS },
-    count: 9,
+    count: 6,
   },
 ];
 

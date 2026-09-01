@@ -9,7 +9,7 @@ import { testimonial } from "@/lib/data";
 export function Testimonial() {
   const faces = assets.testimonialAvatars;
   return (
-    <section aria-labelledby="testimonial" className="bg-surface-light pb-14 pt-6">
+    <section aria-labelledby="testimonial" className="bg-surface-light pb-[64px] pt-[100px]">
       <div className="mx-auto flex max-w-[820px] flex-col items-center gap-5 px-6 text-center">
         <div className="flex items-center gap-2.5">
           <div className="flex -space-x-2">

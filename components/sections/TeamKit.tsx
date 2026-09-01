@@ -13,7 +13,7 @@ export function TeamKit() {
       <div className="relative mx-auto max-w-[1440px] overflow-hidden">
         <div className="grid grid-cols-3">
           {[assets.jerseyBack, assets.jerseyBanner, assets.jerseyName].map((src) => (
-            <div key={src} className="relative aspect-[3/4] md:aspect-[480/430]">
+            <div key={src} className="relative aspect-[3/4] md:aspect-[480/685]">
               <Image src={src} alt="" fill loading="lazy" sizes="33vw" className="object-cover" />
             </div>
           ))}

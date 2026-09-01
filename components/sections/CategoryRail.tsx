@@ -55,8 +55,8 @@ export function CategoryRail({
   };
 
   return (
-    <section aria-labelledby={headingId} className="bg-surface py-12 md:py-16">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-6 md:px-12">
+    <section aria-labelledby={headingId} className="bg-surface pb-[100px] pt-[100px] md:pt-[200px]">
+      <div className="mx-auto flex h-[46px] max-w-[1440px] flex-col justify-center px-6 md:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h2 id={headingId} className="font-sans text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold tracking-[-0.03em] text-white">
             {title}
@@ -71,14 +71,14 @@ export function CategoryRail({
         role="region"
         aria-label={`${title} carousel`}
         tabIndex={0}
-        className="no-scrollbar mt-6 flex snap-x gap-4 overflow-x-auto scroll-smooth px-6 md:px-10"
+        className="no-scrollbar mt-[64px] flex snap-x gap-6 overflow-x-auto scroll-smooth px-6"
       >
         {tiles.map((tile, i) => (
           <Link
             key={tile.label + i}
             href={href}
             className={cn(
-              "group relative aspect-[380/300] w-[74vw] shrink-0 snap-start overflow-hidden sm:w-[42vw] lg:w-[380px]",
+              "group relative aspect-square w-[74vw] shrink-0 snap-start overflow-hidden sm:w-[46vw] lg:w-[428px]",
               tone === "card" ? "bg-navy-card [background-image:radial-gradient(circle,rgba(255,255,255,.16)_1px,transparent_1px)] [background-size:34px_34px]" : "bg-surface-raised"
             )}
           >
@@ -106,7 +106,7 @@ export function CategoryRail({
       </div>
 
       {/* Five-dash rule, active dash gold */}
-      <div className="mt-7 flex items-center justify-center gap-2.5">
+      <div className="mt-[46px] flex items-center justify-center gap-2.5">
         {Array.from({ length: 5 }, (_, i) => (
           <button
             key={i}

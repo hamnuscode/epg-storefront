@@ -9,7 +9,7 @@ import { assets } from "@/lib/assets";
 export function CollectionBanner() {
   return (
     <section aria-label="Collection" className="bg-surface">
-      <div className="relative mx-auto h-[340px] max-w-[1440px] overflow-hidden md:h-[460px]">
+      <div className="relative mx-auto h-[420px] max-w-[1440px] overflow-hidden md:h-[687px]">
         <Image
           src={assets.collectionBanner}
           alt=""

@@ -27,7 +27,7 @@ const ICONS: Record<string, React.ReactNode> = {
 /** Figma: "Frame 427321613" (1440x599) — three-up reassurance band. */
 export function Assurances() {
   return (
-    <section aria-label="Why shop with us" className="bg-surface py-16 md:py-24">
+    <section aria-label="Why shop with us" className="bg-surface py-24 md:py-[185px]">
       <Container>
         <ul className="grid gap-10 text-center md:grid-cols-3">
           {assurances.map((item) => (
