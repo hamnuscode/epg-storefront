@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
-import { Customiser } from "@/components/sections/Customiser";
+import { Forgex } from "@/components/sections/Forgex";
 import { ProductListing } from "@/components/sections/ProductListing";
 import { Footer } from "@/components/layouts/Footer";
 import { assets } from "@/lib/assets";
-import { featuredProducts } from "@/lib/data";
+import { gearProducts } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { textStyles } from "@/lib/typography";
 import { cn } from "@/lib/cn";
@@ -30,12 +30,12 @@ export default function CustomPage() {
           display="Design in Real Time."
           title="Custom Gear"
           tagline="From digital mesh to master design."
-          image={assets.customiser}
+          image={assets.categoryHeroes["custom"]}
           primaryCta={{ label: "START DESIGNING", href: "#configurator" }}
         />
 
         <div id="configurator">
-          <Customiser />
+          <Forgex />
         </div>
 
         <section aria-labelledby="process" className="bg-surface py-25">
@@ -61,7 +61,7 @@ export default function CustomPage() {
         </section>
 
         <ProductListing
-          products={featuredProducts}
+          products={gearProducts}
           filters={["All", "Apparel", "Equipment", "Team Kit"]}
         />
       </main>

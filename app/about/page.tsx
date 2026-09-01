@@ -31,7 +31,7 @@ export default function AboutPage() {
           display="EPG"
           title="About Us"
           tagline="Built for athletes, by athletes."
-          image={assets.heroSlides[0]}
+          image={assets.categoryHeroes["about"]}
           primaryCta={{ label: "OUR STORY", href: "#story" }}
         />
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-4/3 w-full flex-1 overflow-hidden rounded-lg">
               <Image
-                src={assets.heroSlides[2]}
+                src={assets.sportTiles[1].image}
                 alt="EPG manufacturing floor"
                 fill
                 loading="lazy"

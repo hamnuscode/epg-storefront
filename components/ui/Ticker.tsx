@@ -18,7 +18,7 @@ export function Ticker({
     <div
       className={cn(
         "relative flex h-[50px] items-center overflow-hidden",
-        "bg-linear-135 from-brand-600 via-brand-500 to-brand-400",
+        "bg-linear-to-r from-brand-600 via-brand-400 to-brand-600",
         className
       )}
       aria-hidden

@@ -6,7 +6,7 @@
  */
 import { assets } from "./assets";
 import type { Product } from "@/types";
-import { featuredProducts } from "./data";
+import { gearProducts } from "./data";
 
 export interface CategoryPage {
   slug: string;
@@ -22,7 +22,7 @@ export interface CategoryPage {
   products: Product[];
 }
 
-const pool = featuredProducts;
+const pool = gearProducts;
 const slice = (n: number, offset = 0) =>
   Array.from({ length: n }, (_, i) => {
     const base = pool[(i + offset) % pool.length];
@@ -37,7 +37,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Your next round starts here!",
     filters: ["All", "Shorts", "Guards", "BJJ", "Karate", "Taekwondo", "Uniforms"],
     secondaryCta: true,
-    heroImage: assets.heroSlides[1],
+    heroImage: assets.categoryHeroes["martial-arts"],
     products: slice(8),
   },
   {
@@ -47,7 +47,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Your next winning gear awaits!",
     filters: ["All", "Gloves", "Bats", "Helmets", "Jerseys", "Cleats"],
     secondaryCta: true,
-    heroImage: assets.heroSlides[2],
+    heroImage: assets.categoryHeroes["baseball"],
     products: slice(8, 2),
   },
   {
@@ -57,7 +57,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Premium experience starts here!",
     filters: ["All", "Gloves", "Polos", "Caps", "Bags", "Accessories"],
     secondaryCta: true,
-    heroImage: assets.heroSlides[3],
+    heroImage: assets.categoryHeroes["golf"],
     products: slice(8, 4),
   },
   {
@@ -67,7 +67,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Performance-driven style, crafted for men.",
     filters: ["All", "Tops", "Bottoms", "Outerwear", "Footwear"],
     secondaryCta: false,
-    heroImage: assets.heroSlides[0],
+    heroImage: assets.categoryHeroes["men"],
     products: slice(8, 1),
   },
   {
@@ -77,7 +77,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Confident, everyday essentials, designed for women.",
     filters: ["All", "Tops", "Bottoms", "Outerwear", "Footwear"],
     secondaryCta: false,
-    heroImage: assets.heroSlides[4],
+    heroImage: assets.categoryHeroes["women"],
     products: slice(8, 3),
   },
   {
@@ -87,7 +87,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Durable, playproof comfort, built for kids.",
     filters: ["All", "Tops", "Bottoms", "Protective", "Footwear"],
     secondaryCta: false,
-    heroImage: assets.heroSlides[2],
+    heroImage: assets.categoryHeroes["kids"],
     products: slice(8, 5),
   },
   {
@@ -97,7 +97,7 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Premium, limited-edition designs, curated for everyone.",
     filters: ["All", "Equipment", "Apparel", "Accessories", "Limited"],
     secondaryCta: true,
-    heroImage: assets.heroSlides[1],
+    heroImage: assets.categoryHeroes["collection"],
     products: slice(12),
   },
 ];
@@ -107,9 +107,9 @@ export const getCategory = (slug: string) =>
 
 /** Flat product lookup for the product detail route. */
 export const allProducts: Product[] = [
-  ...featuredProducts,
+  ...gearProducts,
   ...categoryPages.flatMap((c) => c.products),
 ];
 
 export const getProduct = (id: string) =>
-  allProducts.find((p) => p.id === id) ?? featuredProducts[0];
+  allProducts.find((p) => p.id === id) ?? gearProducts[0];

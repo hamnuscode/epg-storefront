@@ -16,7 +16,7 @@ const SIZES = ["XS", "S", "M", "L", "XL", "XXL"] as const;
  * info column, then the description band with the #282828 spec panel.
  */
 export function ProductDetail({ product }: { product: Product }) {
-  const gallery = [product.image, ...assets.products.slice(0, 3)];
+  const gallery = [product.image, ...assets.products.slice(1, 4)];
   const [active, setActive] = useState(0);
   const [size, setSize] = useState<string>("M");
   const [qty, setQty] = useState(1);
