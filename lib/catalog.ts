@@ -21,6 +21,8 @@ export interface CategoryPage {
   hotspots?: Hotspot[];
   /** Sport pages carry the discipline rail; audience pages do not. */
   disciplines?: Discipline[];
+  /** Collection carries the four-tile "Shop by Category" bar instead. */
+  categoryBar?: { label: string; images: string[] }[];
   filters: string[];
   categories: string[];
   secondaryCta: boolean;
@@ -98,11 +100,11 @@ export const categoryPages: CategoryPage[] = [
     title: "Men",
     tagline: "Performance-driven style, crafted for men.",
     backdrop: img("12860fe2489b"),
-    subject: img("286cbe3b7b66"),
-    filters: ["All", "Tops", "Bottoms", "Outerwear"],
-    categories: ["Select Category", "Tops", "Bottoms", "Footwear"],
+    subject: img("2270a2e8782e"),
+    filters: ["All", "Tops", "Bottoms", "Equipment", "Accessories"],
+    categories: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball"],
     secondaryCta: false,
-    product: { image: img("2270a2e8782e"), name: "Training Kit", label: "Men", price: 69.99, compareAt: 89.99, colors: DOTS },
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Men", price: 69.99, compareAt: 89.99, colors: DOTS },
     count: 6,
   },
   {
@@ -112,10 +114,10 @@ export const categoryPages: CategoryPage[] = [
     tagline: "Confident, everyday essentials, designed for women.",
     backdrop: img("12860fe2489b"),
     subject: img("7a74f883ba54"),
-    filters: ["All", "Tops", "Bottoms", "Outerwear"],
-    categories: ["Select Category", "Tops", "Bottoms", "Footwear"],
+    filters: ["All", "Tops", "Bottoms", "Equipment", "Accessories"],
+    categories: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball"],
     secondaryCta: false,
-    product: { image: img("c4d108649e20"), name: "Training Kit", label: "Women", price: 69.99, compareAt: 89.99, colors: DOTS },
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Women", price: 69.99, compareAt: 89.99, colors: DOTS },
     count: 6,
   },
   {
@@ -124,11 +126,11 @@ export const categoryPages: CategoryPage[] = [
     title: "Kids",
     tagline: "Durable, playproof comfort, built for kids.",
     backdrop: img("12860fe2489b"),
-    subject: img("193746e4e27f"),
+    subject: img("319085dbdc81"),
     filters: ["All", "Tops", "Bottoms", "Protective"],
-    categories: ["Select Category", "Tops", "Bottoms", "Footwear"],
+    categories: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball"],
     secondaryCta: false,
-    product: { image: img("319085dbdc81"), name: "Training Kit", label: "Kids", price: 69.99, compareAt: 89.99, colors: DOTS },
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Kids", price: 69.99, compareAt: 89.99, colors: DOTS },
     count: 6,
   },
   {
@@ -137,9 +139,24 @@ export const categoryPages: CategoryPage[] = [
     title: "Collection",
     tagline: "Premium, limited-edition designs, curated for everyone.",
     backdrop: img("86f34368631c"),
-    subject: img("dd328aab9ae9"),
-    disciplines: MARTIAL_DISCIPLINES,
-    filters: ["All", "Equipment", "Apparel", "Accessories", "Limited"],
+    hotspots: [
+      { label: "Baseball Helmet", top: "12%", left: "32%" },
+      { label: "Batting Gloves", top: "14%", left: "54%" },
+      { label: "Golf Shirt", top: "29%", left: "80%" },
+      { label: "Baseball Jersey", top: "35%", left: "49%" },
+      { label: "Golf Cap", top: "42%", left: "70%" },
+      { label: "Karate Gi", top: "46%", left: "10%" },
+      { label: "Karate Belt", top: "67%", left: "13%" },
+      { label: "Shin Guards", top: "71%", left: "73%" },
+      { label: "Baseball Bat", top: "86%", left: "19%" },
+    ],
+    categoryBar: [
+      { label: "All", images: [img("2270a2e8782e"), img("7a74f883ba54"), img("319085dbdc81")] },
+      { label: "Men", images: [img("2270a2e8782e")] },
+      { label: "Women", images: [img("7a74f883ba54")] },
+      { label: "Kids", images: [img("319085dbdc81")] },
+    ],
+    filters: ["All", "Tops", "Bottoms", "Equipment", "Accessories"],
     categories: ["Select Category", "Equipment", "Apparel", "Accessories"],
     secondaryCta: true,
     product: { image: img("33935de05351"), name: "Head Guard for Training", label: "MMA", price: 69.99, compareAt: 89.99, colors: DOTS },

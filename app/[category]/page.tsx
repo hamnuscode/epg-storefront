@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/sections/PageHero";
 import { DisciplineRail } from "@/components/sections/DisciplineRail";
+import { CategoryBar } from "@/components/sections/CategoryBar";
 import { ProductListing } from "@/components/sections/ProductListing";
 import { Footer } from "@/components/layouts/Footer";
 import { categoryPages, getCategory, productsFor } from "@/lib/catalog";
@@ -43,6 +44,7 @@ export default async function CategoryPage({
         />
 
         {page.disciplines && <DisciplineRail items={page.disciplines} />}
+        {page.categoryBar && <CategoryBar tiles={page.categoryBar} />}
 
         <ProductListing
           products={productsFor(page)}
