@@ -1,5 +1,7 @@
 # EPG — Eastern Pro Gear
 
+**Live:** https://epg-storefront.vercel.app  ·  **Repo:** https://github.com/hamnuscode/epg-storefront
+
 Next.js implementation of the Figma file **EPG (Devs)** (`9KBREJwZuEXeUgwvyxXP33`).
 
 ```bash
@@ -21,9 +23,21 @@ npm run lint
 
 ## What is built
 
-Design tokens, the shared component library, and the **Home** page (desktop
-1440 + mobile 390). The remaining 12 desktop screens and 13 mobile screens
-from the Figma file are not implemented yet — see *Not yet built* below.
+All designed screens, as **30 prerendered pages** across 8 routes:
+
+| Route | Figma frames |
+|---|---|
+| `/` | Home |
+| `/[category]` | Martial Arts · Baseball · Golf · Men · Women · Kids · Collection |
+| `/product/[id]` | Product Page |
+| `/checkout` | Checkout |
+| `/custom` | Custom |
+| `/about` | About Us |
+| `not-found` | 404 |
+
+The seven category pages share one route because the Figma frames are
+structurally identical — Martial Arts / Baseball / Golf at 4002px and
+Men / Women / Kids at 3066px differ only in content.
 
 ```
 app/
@@ -123,13 +137,21 @@ Semantic landmarks throughout, a skip link, visible `:focus-visible` rings,
 tablist, and focus trap plus focus restore on the mobile drawer. Motion
 respects `prefers-reduced-motion`.
 
-## Not yet built
+## Deployment
 
-12 desktop screens and 13 mobile screens remain: Product Page, Checkout,
-Martial Arts / Baseball / Golf (one shared template), Men / Women / Kids /
-Collection (a second shared template), Custom, About Us, 404.
+Pushes to `main` deploy automatically via the connected Vercel project.
 
-The template analysis is worth acting on — those 13 desktop screens collapse
-to **6 routes**, two of them dynamic segments, because Martial Arts /
-Baseball / Golf are structurally identical at 4002px, as are Men / Women /
-Kids at 3066px.
+```bash
+vercel --prod      # manual production deploy
+```
+
+## Known gaps
+
+* The **Forgex** band on Home (986px in the frame) is not built — its
+  structure was not legible enough from the layout tree to implement
+  honestly.
+* Secondary footer and account links (`/account`, `/shipping`, `/returns`,
+  `/faq`, `/privacy`, `/terms`, `/wholesale`, `/contact`) have no designed
+  frames, so they resolve to the designed 404.
+* Checkout validates and simulates submission client-side; there is no
+  payment integration.
