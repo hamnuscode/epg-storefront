@@ -15,7 +15,7 @@ export interface Hotspot { label: string; top: string; left: string }
 export function PageHero({
   display, title, tagline, subject, backdrop, hotspots = [],
   primaryCta = { label: "Explore Collection", href: "#gear" },
-  secondaryCta, tall = false,
+  secondaryCta, aside, tall = false,
 }: {
   display: string;
   title: string;
@@ -25,6 +25,8 @@ export function PageHero({
   hotspots?: Hotspot[];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  /** About Us sets its lead paragraph beside the title inside the hero row. */
+  aside?: string;
   tall?: boolean;
 }) {
   return (
@@ -61,19 +63,25 @@ export function PageHero({
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[46%] bg-linear-to-t from-surface/90 via-surface/40 to-transparent md:from-surface md:via-surface/80" />
 
       <div className="relative flex flex-col items-start gap-4 px-6 pb-14 pt-24 text-left md:items-center md:pb-16 md:pt-0 md:text-center">
-        <div className="flex flex-col items-start gap-1.5 md:items-center">
+        <div className={cn("flex flex-col items-start gap-1.5", !aside && "md:items-center")}>
           <h1 className="font-sans text-[clamp(2rem,4.8vw,2.9rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
             {title}
           </h1>
           <p className="font-sans text-xs text-white/75">{tagline}</p>
         </div>
 
-        <div className="flex flex-col items-start gap-2 md:flex-row md:flex-wrap md:items-center md:justify-center">
+        <div className={cn("flex flex-col items-start gap-2 md:flex-row md:flex-wrap md:items-center", !aside && "md:justify-center")}>
           <ButtonLink href={primaryCta.href} variant="solid" size="sm">{primaryCta.label}</ButtonLink>
           {secondaryCta && (
             <ButtonLink href={secondaryCta.href} variant="outline" size="sm">{secondaryCta.label}</ButtonLink>
           )}
         </div>
+
+        {aside && (
+          <p className="max-w-[430px] font-sans text-[13px] leading-[1.75] text-white/60">
+            {aside}
+          </p>
+        )}
       </div>
     </section>
   );
