@@ -45,7 +45,7 @@ export function FilterPills({ options, value, onChange, label, size = "md", tone
             }}
             className={cn(
               "rounded-xl font-sans font-medium tracking-[-0.02em]",
-              size === "sm" ? "h-8 px-3.5 text-sm" : "h-10 px-4.5 text-xl font-semibold",
+              size === "sm" ? "h-8 px-2.5 text-[11px] md:px-3.5 md:text-sm" : "h-10 px-4.5 text-xl font-semibold",
               "transition-colors duration-200 [transition-timing-function:var(--ease-out-soft)]",
               tone === "light"
                 ? selected

@@ -24,7 +24,7 @@ export function GearToolbar({
     "h-9 border border-line bg-surface-raised px-3 font-sans text-[11px] text-white/80 outline-none transition-colors focus-visible:border-brand-400";
 
   return (
-    <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+    <div className="flex min-w-0 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <FilterPills
         label="Filter by product type"
         options={filters}
@@ -34,7 +34,7 @@ export function GearToolbar({
         className="flex-wrap"
       />
 
-      <div className="flex items-center gap-3">
+      <div className="flex min-w-0 items-center gap-3">
         <label className="hidden sm:block">
           <span className="sr-only">Select category</span>
           <select
@@ -48,7 +48,7 @@ export function GearToolbar({
           </select>
         </label>
 
-        <label className="relative flex-1 sm:flex-none">
+        <label className="relative min-w-0 flex-1 sm:flex-none">
           <span className="sr-only">Search products</span>
           <svg
             width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
@@ -61,9 +61,18 @@ export function GearToolbar({
             value={query}
             onChange={(e) => onQuery(e.target.value)}
             placeholder="Search"
-            className={cn(control, "w-full pl-8 sm:w-[170px] placeholder:text-white/40")}
+            className={cn(control, "w-full min-w-0 pl-8 sm:w-[170px] placeholder:text-white/40")}
           />
         </label>
+        <button
+          type="button"
+          aria-label="More filters"
+          className="grid size-9 shrink-0 place-items-center border border-line text-white/70 transition-colors hover:text-white sm:hidden"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+            <path d="M3 6h18M6 12h12M10 18h4" strokeLinecap="round" />
+          </svg>
+        </button>
       </div>
     </div>
   );

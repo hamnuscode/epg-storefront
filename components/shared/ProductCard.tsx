@@ -22,7 +22,7 @@ export const ProductCard = memo(function ProductCard({
   className?: string;
 }) {
   return (
-    <article className={cn("group relative bg-surface-raised", className)}>
+    <article className={cn("group relative min-w-0 bg-surface-raised", className)}>
       <Link href={`/product/${product.id}`} className="block">
         <div className="relative aspect-[430/300] overflow-hidden">
           <span
@@ -44,7 +44,7 @@ export const ProductCard = memo(function ProductCard({
           />
         </div>
 
-        <div className="flex flex-col gap-1.5 px-4 pb-5">
+        <div className="flex min-w-0 flex-col gap-1.5 px-4 pb-5">
           <span className="flex items-center gap-1.5 font-condensed text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-400">
             <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M12 2l7 4v6c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z" />
@@ -52,7 +52,7 @@ export const ProductCard = memo(function ProductCard({
             {product.categoryLabel ?? "MMA"}
           </span>
 
-          <h3 className="font-sans text-[14px] font-medium tracking-[-0.01em] text-white">
+          <h3 className="truncate font-sans text-[12px] md:text-[13px] font-medium tracking-[-0.01em] text-white md:text-[14px]">
             {product.name}
           </h3>
 

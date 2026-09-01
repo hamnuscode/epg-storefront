@@ -39,7 +39,7 @@ export function DisciplineRail({
             onClick={() => setActive(i)}
             aria-pressed={i === active}
             className={cn(
-              "group relative flex h-[92px] items-center overflow-hidden bg-navy-800 text-left transition-colors md:h-[112px]",
+              "group relative flex h-[92px] min-w-0 items-center overflow-hidden bg-navy-800 text-left transition-colors md:h-[112px]",
               i === active && "before:absolute before:inset-y-0 before:left-0 before:w-[3px] before:bg-brand-400"
             )}
           >

@@ -88,6 +88,10 @@ html {
   background: var(--color-surface);
   color-scheme: dark;
   scroll-behavior: smooth;
+  /* The off-canvas drawer and the decorative skewed panels sit outside the
+     viewport by design; clip rather than scroll. `clip` is used over `hidden`
+     so it never creates a scroll container. */
+  overflow-x: clip;
 }
 
 body {

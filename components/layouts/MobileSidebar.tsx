@@ -70,7 +70,7 @@ export function MobileSidebar({
         className={cn(
           "fixed inset-y-0 right-0 z-70 flex w-[285px] flex-col bg-surface-overlay",
           "transition-transform duration-300 [transition-timing-function:var(--ease-out-soft)] md:hidden",
-          open ? "translate-x-0" : "translate-x-full"
+          open ? "translate-x-0" : "pointer-events-none translate-x-full"
         )}
       >
         <div className="flex h-[62px] items-center justify-end px-6">

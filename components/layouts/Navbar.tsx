@@ -54,14 +54,27 @@ export function Navbar({ className }: { className?: string }) {
           aria-label="Main"
           className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-6"
         >
-          <Link href="/" aria-label="EPG — Eastern Pro Gear, home">
+          {/* Mobile: hamburger sits left of the centred logo */}
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={drawerOpen}
+            className="text-white md:hidden"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+
+          <Link href="/" aria-label="EPG — Eastern Pro Gear, home" className="md:mr-auto">
             <Image
               src={assets.logo}
               alt="EPG"
               width={78}
               height={48}
               priority
-              className="h-10 w-auto object-contain md:h-12"
+              className="h-6 w-auto object-contain md:h-9"
             />
           </Link>
 
@@ -137,23 +150,9 @@ export function Navbar({ className }: { className?: string }) {
             </div>
           </div>
 
-          {/* Mobile trigger */}
-          <div className="flex items-center gap-4 md:hidden">
-            <Link href="/checkout" aria-label="Shopping cart" className="text-white">
-              <CartIcon />
-            </Link>
-            <button
-              type="button"
-              onClick={() => setDrawerOpen(true)}
-              aria-label="Open menu"
-              aria-expanded={drawerOpen}
-              className="text-white"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
+          <Link href="/checkout" aria-label="Shopping cart" className="text-white md:hidden">
+            <CartIcon />
+          </Link>
         </nav>
       </header>
 
