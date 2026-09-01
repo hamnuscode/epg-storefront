@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   EPG design tokens — extracted from Figma "EPG (Devs)" (file 9KBREJwZ…)
+   Raw values were normalized: 73 source colors collapsed to a surface/brand
+   scale, and fractional font sizes (frame-scaling artifacts) snapped to a
+   real type ramp. See lib/typography.ts for the original→normalized map.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Surfaces — twelve near-identical Figma greys collapsed to four steps */
+  --color-surface: #0c0c0c;          /* page ground, 135 uses */
+  --color-surface-raised: #191919;   /* cards on dark */
+  --color-surface-overlay: #232323;  /* menus, sheets */
+  --color-surface-muted: #323232;    /* inset wells, 48 uses */
+  --color-surface-light: #ffffff;    /* Forgex + Testimonial bands */
+  --color-surface-light-alt: #f7f7f7;
+
+  /* Brand — the "Rami blue grad" named style */
+  --color-brand-400: #579ada;
+  --color-brand-500: #468dd2;
+  --color-brand-600: #2e79be;
+
+  /* Accent */
+  --color-accent: #b8ff00;
+
+  /* Lines */
+  --color-line: #292929;
+  --color-line-strong: #3e3e3e;
+  --color-line-light: #d1d1d1;
+
+  /* Semantic */
+  --color-danger: #de2e41;
+  --color-danger-dark: #bb2333;
+  --color-success: #2cff4c;
+  --color-warning: #ffc100;
+
+  /* Type ramp — normalized from 196 raw Figma styles */
+  --text-2xs: 0.625rem;   /* 10 */
+  --text-xs: 0.75rem;     /* 12 */
+  --text-sm: 0.875rem;    /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg: 1.125rem;    /* 18 */
+  --text-xl: 1.25rem;     /* 20 — nav, buttons, body-lg */
+  --text-2xl: 1.5rem;     /* 24 — card titles, prices */
+  --text-3xl: 1.75rem;    /* 28 — product names */
+  --text-4xl: 2rem;       /* 32 */
+  --text-5xl: 2.5rem;     /* 40 */
+  --text-6xl: 3rem;       /* 48 — section headings ("Shop by Category") */
+  --text-7xl: 4rem;       /* 64 — hero headline */
+  --text-8xl: 4.75rem;    /* 76 — "on pitch / OFF pitch" */
+
+  /* Families — SF Pro/SF Compact substituted by Inter (see README) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: var(--font-barlow), var(--font-inter), sans-serif;
+  --font-display: var(--font-anton), Impact, sans-serif;
+  --font-script: var(--font-reenie), cursive;
+  --font-wide: var(--font-gothic), var(--font-inter), sans-serif;
+
+  /* Radii — 26 raw values snapped to six steps */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Layout — the Figma 100px/200px section padding is expressed with the
+     numeric scale directly (py-25 = 100px, pt-50 = 200px on a 4px base),
+     so no extra tokens are needed here. */
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Section rhythm: dark by default, matching the Home frame's #0c0c0c ground */
+html {
+  background: var(--color-surface);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-surface);
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus for keyboard users only — WCAG 2.4.7 */
+:focus-visible {
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* The horizontal carousels in Category / Our Sports scroll natively */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Footer ticker — 3 copies inline, translate by exactly one third */
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+.animate-ticker { animation: ticker 30s linear infinite; }
