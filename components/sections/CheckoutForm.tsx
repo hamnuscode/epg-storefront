@@ -48,10 +48,10 @@ export function CheckoutForm() {
   const total = subtotal + shipping + taxes;
 
   return (
-    <div className="grid lg:grid-cols-2">
+    <div className="grid pt-[100px] lg:grid-cols-2">
       {/* Form */}
-      <section aria-labelledby="checkout-h" className="bg-surface px-6 py-12 lg:px-16">
-        <div className="mx-auto flex max-w-[480px] flex-col gap-8">
+      <section aria-labelledby="checkout-h" className="bg-surface px-6 pb-16 pt-16 lg:pl-[109px] lg:pr-[112px]">
+        <div className="flex w-full max-w-[499px] flex-col gap-12">
           <h1 id="checkout-h" className="sr-only">Checkout</h1>
 
           <div className="flex flex-col gap-4">
@@ -83,16 +83,16 @@ export function CheckoutForm() {
               className="flex flex-col gap-7"
             >
               <fieldset className="flex flex-col gap-3 border-0 p-0">
-                <legend className="mb-1 font-sans text-lg font-semibold text-white">Contact Information</legend>
+                <legend className="mb-2 font-sans text-[22px] font-semibold text-white">Contact Information</legend>
                 <Field id="email" placeholder="Email Address" type="email" register={register} error={errors.email?.message} />
-                <label className="flex items-center gap-2 font-sans text-xs text-white/65">
+                <label className="flex items-center gap-2.5 font-sans text-[14px] text-white/65">
                   <input type="checkbox" defaultChecked className="size-3.5 accent-white" />
                   Email me with news and offers
                 </label>
               </fieldset>
 
               <fieldset className="flex flex-col gap-3 border-0 p-0">
-                <legend className="mb-1 font-sans text-lg font-semibold text-white">Delivery</legend>
+                <legend className="mb-2 font-sans text-[22px] font-semibold text-white">Delivery</legend>
                 <label className="flex flex-col gap-1 rounded-md border border-line bg-transparent px-3 py-2">
                   <span className="font-sans text-[10px] text-white/45">Country/Region</span>
                   <select {...register("country")} className="bg-transparent font-sans text-xs text-white outline-none">
@@ -114,7 +114,7 @@ export function CheckoutForm() {
               </fieldset>
 
               <fieldset className="flex flex-col gap-3 border-0 p-0">
-                <legend className="mb-0.5 font-sans text-lg font-semibold text-white">Payment Method</legend>
+                <legend className="mb-1 font-sans text-[22px] font-semibold text-white">Payment Method</legend>
                 <p className="mb-1 font-sans text-[11px] text-white/45">All transactions are secure and encrypted.</p>
                 <div className="rounded-md border border-line">
                   <div className="flex items-center justify-between gap-3 border-b border-line px-3 py-2.5">
@@ -136,6 +136,15 @@ export function CheckoutForm() {
                     </div>
                     <Field id="cardName" placeholder="Name on card" register={register} error={errors.cardName?.message} />
                   </div>
+                  {["Apple Pay", "PayPal"].map((m) => (
+                    <label key={m} className="flex cursor-pointer items-center justify-between gap-3 border-t border-line px-3 py-3.5">
+                      <span className="flex items-center gap-2">
+                        <input type="radio" name="pm" className="size-3.5 accent-white" />
+                        <span className="font-sans text-[14px] text-white/70">{m}</span>
+                      </span>
+                      <span className="font-sans text-[13px] font-semibold text-white/55">{m}</span>
+                    </label>
+                  ))}
                 </div>
               </fieldset>
 
@@ -148,15 +157,15 @@ export function CheckoutForm() {
       </section>
 
       {/* Cart */}
-      <section aria-labelledby="cart-h" className="bg-[#1a1a1a] px-6 py-12 lg:px-16">
-        <div className="mx-auto flex max-w-[460px] flex-col gap-7">
+      <section aria-labelledby="cart-h" className="bg-[#1a1a1a] px-6 pb-16 pt-16 lg:px-[55px]">
+        <div className="flex w-full max-w-[610px] flex-col gap-[61px]">
           <div className="flex items-center justify-between">
-            <h2 id="cart-h" className="font-sans text-lg font-semibold text-white">Your cart (1)</h2>
+            <h2 id="cart-h" className="font-sans text-[22px] font-semibold text-white">Your cart (1)</h2>
             <Button variant="outline" size="sm">Edit Order</Button>
           </div>
 
           <div className="flex items-start gap-4">
-            <span className="size-[76px] shrink-0 bg-surface-muted" aria-hidden />
+            <span className="size-[96px] shrink-0 bg-surface-muted" aria-hidden />
             <div className="flex flex-1 flex-col gap-1">
               <h3 className="font-condensed text-sm font-semibold uppercase tracking-[0.1em] text-white">
                 Stelth Boxing Gloves
@@ -184,7 +193,7 @@ export function CheckoutForm() {
             </button>
           </div>
 
-          <dl className="flex flex-col gap-2.5 font-sans text-xs">
+          <dl className="flex flex-col gap-3 font-sans text-[14px]">
             <Line label="Subtotal · 1 item" value={`$${subtotal.toFixed(2)}`} />
             <Line label="Shipping" value={`$${shipping.toFixed(2)}`} />
             <Line label="Estimated taxes" value={`$${taxes.toFixed(2)}`} />
@@ -195,12 +204,12 @@ export function CheckoutForm() {
           </dl>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-sans text-xs text-white/70">You might also like</h3>
+            <h3 className="font-sans text-[14px] text-white/70">You might also like</h3>
             {UPSELL.map((u) => (
               <div key={u.id} className="flex items-center gap-4">
-                <span className="size-[52px] shrink-0 bg-surface-muted" aria-hidden />
-                <span className="flex-1 font-sans text-xs font-medium text-white">Hyderation Bottle</span>
-                <span className="font-sans text-xs tabular-nums text-white">$9.99</span>
+                <span className="size-[62px] shrink-0 bg-surface-muted" aria-hidden />
+                <span className="flex-1 font-sans text-[14px] font-medium text-white">Hyderation Bottle</span>
+                <span className="font-sans text-[14px] tabular-nums text-white">$9.99</span>
                 <button type="button" aria-label="Add Hyderation Bottle" className="grid size-7 shrink-0 place-items-center bg-surface-muted text-white transition-colors hover:bg-white hover:text-surface">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
                     <path d="M12 5v14M5 12h14" strokeLinecap="round" />
@@ -244,7 +253,7 @@ function Field({
         aria-describedby={error ? `${id}-error` : undefined}
         {...register(id)}
         className={cn(
-          "h-10 w-full rounded-md border bg-transparent px-3 font-sans text-xs text-white outline-none transition-colors placeholder:text-white/40",
+          "h-12 w-full rounded-md border bg-transparent px-4 font-sans text-[14px] text-white outline-none transition-colors placeholder:text-white/45",
           error ? "border-danger" : "border-line focus-visible:border-brand-400"
         )}
       />

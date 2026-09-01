@@ -39,9 +39,9 @@ export function ProductDetail({ product }: { product: Product }) {
   const off = Math.round((1 - product.price / compare) * 100);
 
   return (
-    <section className="bg-surface pb-16 pt-10">
-      <div className="mx-auto max-w-[1320px] px-6 md:px-12">
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+    <section className="bg-surface pb-[50px] pt-[100px]">
+      <div className="mx-auto max-w-[1320px] px-6 md:px-10">
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-[68px]">
           {/* Gallery */}
           <div className="flex flex-1 gap-4">
             <div className="flex shrink-0 flex-col gap-3">
@@ -53,7 +53,7 @@ export function ProductDetail({ product }: { product: Product }) {
                   aria-label={`View image ${i + 1}`}
                   aria-current={i === shot || undefined}
                   className={cn(
-                    "relative h-[74px] w-[68px] overflow-hidden transition-opacity",
+                    "relative h-[104px] w-[96px] overflow-hidden transition-opacity",
                     i === shot ? "opacity-100 ring-1 ring-white/60" : "opacity-55 hover:opacity-85"
                   )}
                 >
@@ -61,7 +61,7 @@ export function ProductDetail({ product }: { product: Product }) {
                 </button>
               ))}
             </div>
-            <div className="relative aspect-[430/470] flex-1 overflow-hidden bg-surface-raised">
+            <div className="relative aspect-[600/753] flex-1 overflow-hidden bg-surface-raised">
               <Image
                 src={gallery[shot]}
                 alt={product.name}
@@ -74,8 +74,8 @@ export function ProductDetail({ product }: { product: Product }) {
           </div>
 
           {/* Buy column */}
-          <div className="flex w-full flex-col gap-5 lg:w-[430px]">
-            <span className="w-fit bg-surface-overlay px-3 py-1.5 font-sans text-[11px] font-medium text-white">
+          <div className="flex w-full flex-col gap-6 lg:w-[529px]">
+            <span className="w-fit bg-surface-overlay px-3.5 py-2 font-sans text-[13px] font-medium text-white">
               New Arrival
             </span>
 
@@ -91,29 +91,29 @@ export function ProductDetail({ product }: { product: Product }) {
                   </svg>
                 ))}
               </span>
-              <span className="font-sans text-xs text-white/60">4.8 (128 reviews)</span>
+              <span className="font-sans text-[14px] text-white/60">4.8 (128 reviews)</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="font-sans text-2xl font-semibold tabular-nums text-white">
+              <span className="font-sans text-[30px] font-semibold tabular-nums text-white">
                 ${product.price.toFixed(2)}
               </span>
-              <span className="font-sans text-sm tabular-nums text-white/40 line-through">
+              <span className="font-sans text-[16px] tabular-nums text-white/40 line-through">
                 ${compare.toFixed(2)}
               </span>
-              <span className="bg-surface-muted px-2 py-1 font-sans text-[11px] font-semibold text-white">
+              <span className="bg-surface-muted px-2.5 py-1.5 font-sans text-[13px] font-semibold text-white">
                 {off}% OFF
               </span>
             </div>
 
-            <p className="max-w-[330px] font-sans text-xs leading-[1.7] text-white/60">
+            <p className="max-w-[380px] font-sans text-[14px] leading-[1.7] text-white/60">
               Premium {product.name} that help you perform in style.
             </p>
 
             <hr className="border-line" />
 
             <fieldset className="flex flex-col gap-3 border-0 p-0">
-              <legend className="font-sans text-xs text-white/60">
+              <legend className="font-sans text-[14px] text-white/60">
                 Color: <span className="text-white">{COLORS[color].name}</span>
               </legend>
               <div className="flex gap-2.5">
@@ -126,7 +126,7 @@ export function ProductDetail({ product }: { product: Product }) {
                     aria-pressed={i === color}
                     style={{ background: c.hex }}
                     className={cn(
-                      "size-8 rounded-full transition-shadow",
+                      "size-10 rounded-full transition-shadow",
                       i === color ? "ring-2 ring-white ring-offset-2 ring-offset-surface" : "hover:ring-1 hover:ring-white/40"
                     )}
                   />
@@ -135,7 +135,7 @@ export function ProductDetail({ product }: { product: Product }) {
             </fieldset>
 
             <fieldset className="flex flex-col gap-3 border-0 p-0">
-              <legend className="font-sans text-xs text-white/60">
+              <legend className="font-sans text-[14px] text-white/60">
                 Size: <span className="text-white">{size}</span>
               </legend>
               <div className="flex gap-2">
@@ -146,7 +146,7 @@ export function ProductDetail({ product }: { product: Product }) {
                     onClick={() => setSize(s)}
                     aria-pressed={size === s}
                     className={cn(
-                      "h-9 w-12 border font-sans text-xs font-medium transition-colors",
+                      "h-11 w-14 border font-sans text-[14px] font-medium transition-colors",
                       size === s ? "border-white bg-white text-surface" : "border-line text-white/70 hover:border-white/50"
                     )}
                   >
@@ -170,8 +170,8 @@ export function ProductDetail({ product }: { product: Product }) {
                     <path d={t.icon} strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <span className="flex flex-col">
-                    <span className="font-sans text-[11px] font-semibold text-white">{t.title}</span>
-                    <span className="font-sans text-[9px] leading-tight text-white/45">{t.body}</span>
+                    <span className="font-sans text-[13px] font-semibold text-white">{t.title}</span>
+                    <span className="font-sans text-[11px] leading-tight text-white/45">{t.body}</span>
                   </span>
                 </li>
               ))}
@@ -180,7 +180,7 @@ export function ProductDetail({ product }: { product: Product }) {
         </div>
 
         {/* Tabs + copy */}
-        <div className="mt-16 flex flex-col gap-8 lg:flex-row lg:gap-16">
+        <div className="mt-[74px] flex flex-col gap-8 lg:flex-row lg:gap-[77px]">
           <div className="flex flex-1 flex-col gap-6">
             <div role="tablist" aria-label="Product information" className="flex flex-wrap gap-1">
               {TABS.map((t) => (
@@ -191,7 +191,7 @@ export function ProductDetail({ product }: { product: Product }) {
                   aria-selected={tab === t}
                   onClick={() => setTab(t)}
                   className={cn(
-                    "h-8 rounded-full px-4 font-sans text-xs transition-colors",
+                    "h-10 rounded-full px-5 font-sans text-[14px] transition-colors",
                     tab === t ? "bg-surface-overlay text-white" : "text-white/45 hover:text-white/75"
                   )}
                 >
@@ -199,7 +199,7 @@ export function ProductDetail({ product }: { product: Product }) {
                 </button>
               ))}
             </div>
-            <p className="max-w-[420px] font-sans text-xs leading-[1.85] text-white/60">
+            <p className="max-w-[647px] font-sans text-[14px] leading-[1.85] text-white/60">
               Premium {product.name} that help you perform in style. Premium {product.name} that
               help you perform in style. Premium {product.name} that help you perform in style.
             </p>
