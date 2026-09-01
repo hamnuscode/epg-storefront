@@ -14,7 +14,7 @@ export default function NotFound() {
           display="404"
           title="Oops, I think we&rsquo;re lost"
           tagline="Let&rsquo;s get you back somewhere familiar..."
-          backdrop="/images/12860fe2489b.webp"
+          wash="/images/12860fe2489b.webp"
           primaryCta={{ label: "Back to Home", href: "/" }}
         />
       </main>

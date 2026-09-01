@@ -37,8 +37,10 @@ export default async function CategoryPage({
           display={page.display}
           title={page.title}
           tagline={page.tagline}
-          backdrop={page.backdrop}
+          wash={page.wash}
+          photo={page.photo}
           subject={page.subject}
+          flipSubject={page.flipSubject}
           hotspots={page.hotspots}
           secondaryCta={page.secondaryCta ? { label: "Custom Gear", href: "/custom" } : undefined}
         />

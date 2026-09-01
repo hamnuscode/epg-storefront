@@ -29,7 +29,8 @@ export default function CustomPage() {
           display="Custom"
           title="Your Gear. Your Vision."
           tagline="From logos and colors to premium materials and player names, create professional equipment that is entirely yours."
-          backdrop="/images/1b5afe39fcb5.webp"
+          wash="/images/12860fe2489b.webp"
+          photo="/images/1b5afe39fcb5.webp"
           primaryCta={{ label: "Start Designing", href: "#custom-lab" }}
         />
 

@@ -16,8 +16,13 @@ export interface CategoryPage {
   display?: string;
   title: string;
   tagline: string;
-  backdrop: string;
+  /** 10% texture wash, as the frames paint it. */
+  wash: string;
+  /** Full-strength photograph (Collection only). */
+  photo?: string;
   subject?: string;
+  /** The frame mirrors this page's athlete. */
+  flipSubject?: boolean;
   hotspots?: Hotspot[];
   /** Sport pages carry the discipline rail; audience pages do not. */
   disciplines?: Discipline[];
@@ -47,8 +52,9 @@ export const categoryPages: CategoryPage[] = [
     display: "Discipline",
     title: "Martial Arts",
     tagline: "Your next round starts here!",
-    backdrop: img("0fbc8158251d"),
+    wash: img("0fbc8158251d"),
     subject: img("cb7c051a0793"),
+    flipSubject: true,
     hotspots: [
       { label: "Karate Gi", top: "34%", left: "14%" },
       { label: "Karate Belt", top: "48%", left: "43%" },
@@ -65,7 +71,7 @@ export const categoryPages: CategoryPage[] = [
     display: "Power",
     title: "Baseball",
     tagline: "Your next winning gear awaits!",
-    backdrop: img("afe7618bb68f"),
+    wash: img("afe7618bb68f"),
     subject: img("005a67db1b09"),
     hotspots: [
       { label: "Team Jersey", top: "30%", left: "16%" },
@@ -83,7 +89,7 @@ export const categoryPages: CategoryPage[] = [
     display: "Precision",
     title: "Golf",
     tagline: "Premium experience starts here!",
-    backdrop: img("12860fe2489b"),
+    wash: img("12860fe2489b"),
     subject: img("2d36f9b91a2e"),
     hotspots: [
       { label: "Golf Polo", top: "32%", left: "18%" },
@@ -101,7 +107,7 @@ export const categoryPages: CategoryPage[] = [
     display: "Men",
     title: "Men",
     tagline: "Performance-driven style, crafted for men.",
-    backdrop: img("12860fe2489b"),
+    wash: img("12860fe2489b"),
     subject: img("2270a2e8782e"),
     filters: ["All", "Tops", "Bottoms", "Equipment", "Accessories"],
     categories: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball"],
@@ -114,7 +120,7 @@ export const categoryPages: CategoryPage[] = [
     display: "Women",
     title: "Women",
     tagline: "Confident, everyday essentials, designed for women.",
-    backdrop: img("12860fe2489b"),
+    wash: img("12860fe2489b"),
     subject: img("7a74f883ba54"),
     filters: ["All", "Tops", "Bottoms", "Equipment", "Accessories"],
     categories: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball"],
@@ -127,7 +133,7 @@ export const categoryPages: CategoryPage[] = [
     display: "Kids",
     title: "Kids",
     tagline: "Durable, playproof comfort, built for kids.",
-    backdrop: img("12860fe2489b"),
+    wash: img("12860fe2489b"),
     subject: img("319085dbdc81"),
     filters: ["All", "Tops", "Bottoms", "Protective"],
     categories: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball"],
@@ -139,7 +145,8 @@ export const categoryPages: CategoryPage[] = [
     slug: "collection",
     title: "Collection",
     tagline: "Premium, limited-edition designs, curated for everyone.",
-    backdrop: img("86f34368631c"),
+    photo: img("86f34368631c"),
+    wash: img("12860fe2489b"),
     hotspots: [
       { label: "Baseball Helmet", top: "12%", left: "32%" },
       { label: "Batting Gloves", top: "14%", left: "54%" },

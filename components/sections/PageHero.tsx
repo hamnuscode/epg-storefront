@@ -7,19 +7,18 @@ import { cn } from "@/lib/cn";
 export interface Hotspot { label: string; top: string; left: string }
 
 /**
- * Figma: "Martial Arts Page Hero" (1440x770), reused by every category page,
- * Custom, About and the 404.
- *
- * Three variations the frames actually use:
- *  - `display` — the oversized ghost word. Martial Arts / Baseball / Golf /
- *    Custom / About / 404 have one; Collection deliberately does not.
- *  - `subject` — a cut-out athlete. Collection has none, showing the
- *    photography uncropped instead.
- *  - `hotspots` — pills pinned onto the photography, independent of whether
- *    there is a subject. Collection pins nine straight onto the backdrop.
+ * Figma: "Martial Arts Page Hero" (1440x770) and its siblings. The stack the
+ * frames actually use, bottom to top:
+ *   1. a linear gradient ground, #495264 -> #0b1f38
+ *   2. `wash` — a photograph at 10% opacity, used as texture, not subject
+ *   3. `photo` — a full-opacity photograph (Collection only)
+ *   4. the oversized ghost word
+ *   5. `subject` — a cut-out athlete or apparel row
+ *   6. a bottom scrim: transparent at 35% to black/70% at 82%
+ *   7. hotspot pills, then the title block
  */
 export function PageHero({
-  display, title, tagline, subject, backdrop, hotspots = [],
+  display, title, tagline, subject, flipSubject, wash, photo, hotspots = [],
   primaryCta = { label: "Explore Collection", href: "#gear" },
   secondaryCta, aside, tall = false,
 }: {
@@ -27,31 +26,35 @@ export function PageHero({
   title: string;
   tagline: string;
   subject?: string;
-  backdrop: string;
+  /** Martial Arts mirrors its athlete in the frame. */
+  flipSubject?: boolean;
+  /** Texture photograph, painted at 10% as the frames do. */
+  wash?: string;
+  /** Full-strength photograph. Only Collection uses one. */
+  photo?: string;
   hotspots?: Hotspot[];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
-  /** About sets its lead paragraph beside the title inside the hero row. */
   aside?: string;
   tall?: boolean;
 }) {
   return (
     <section
       className={cn(
-        "relative isolate flex flex-col justify-end overflow-hidden bg-navy-800",
+        "relative isolate flex flex-col justify-end overflow-hidden",
         tall ? "min-h-[100svh] md:min-h-[1024px]" : "min-h-[560px] md:min-h-[770px]"
       )}
+      style={{ background: "linear-gradient(180deg,#495264 0%,#0b1f38 100%)" }}
     >
-      {/* Photography at full strength — only a bottom vignette for the title
-          and a light top scrim so the navbar stays legible. */}
-      <Image src={backdrop} alt="" fill priority sizes="100vw" className="-z-30 object-cover" />
-      <div aria-hidden className="absolute inset-x-0 top-0 -z-20 h-32 bg-linear-to-b from-black/55 to-transparent" />
-      <div aria-hidden className="absolute inset-x-0 bottom-0 -z-20 h-[52%] bg-linear-to-t from-surface via-surface/70 to-transparent" />
+      {photo && <Image src={photo} alt="" fill priority sizes="100vw" className="-z-30 object-cover" />}
+      {wash && (
+        <Image src={wash} alt="" fill priority sizes="100vw" className="-z-30 object-cover opacity-10" />
+      )}
 
       {display && (
         <span
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[24%] -z-10 w-full -translate-x-1/2 select-none text-center font-display text-[24vw] uppercase leading-none tracking-[-0.02em] text-white/8 md:top-[14%] md:text-[19vw]"
+          className="pointer-events-none absolute left-1/2 top-[24%] -z-20 w-full -translate-x-1/2 select-none text-center font-display text-[24vw] uppercase leading-none tracking-[-0.02em] text-white/10 md:top-[14%] md:text-[19vw]"
         >
           {display}
         </span>
@@ -60,10 +63,17 @@ export function PageHero({
       <Navbar />
 
       {subject && (
-        <div className="pointer-events-none absolute bottom-0 right-[-6%] -z-10 h-[74%] w-[112%] md:inset-x-0 md:right-0 md:top-[6%] md:h-[78%] md:w-auto">
-          <Image src={subject} alt="" fill priority sizes="100vw" className="object-contain object-bottom md:object-center" />
+        <div className="pointer-events-none absolute bottom-0 right-[-6%] -z-10 h-[74%] w-[112%] md:inset-x-0 md:right-0 md:top-[4%] md:h-[86%] md:w-auto">
+          <Image src={subject} alt="" fill priority sizes="100vw" className={cn("object-contain object-bottom md:object-center", flipSubject && "scale-x-[-1]")} />
         </div>
       )}
+
+      {/* Bottom scrim — the frame's Rectangle 36 */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-[5] h-[67%]"
+        style={{ background: "linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,0.7) 82%,rgba(0,0,0,0.72) 100%)" }}
+      />
 
       {hotspots.length > 0 && (
         <div aria-hidden className="pointer-events-none absolute inset-0 z-10 hidden md:block">
@@ -95,9 +105,7 @@ export function PageHero({
           </div>
         </div>
 
-        {aside && (
-          <p className="max-w-[430px] font-sans text-[13px] leading-[1.75] text-white/60">{aside}</p>
-        )}
+        {aside && <p className="max-w-[430px] font-sans text-[13px] leading-[1.75] text-white/60">{aside}</p>}
       </div>
     </section>
   );

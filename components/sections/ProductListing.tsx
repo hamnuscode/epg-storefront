@@ -30,8 +30,8 @@ export function ProductListing({
   }, [products, query]);
 
   return (
-    <section id="gear" aria-labelledby="choose-gear" className="bg-surface pb-20 pt-6">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-6 md:px-12">
+    <section id="gear" aria-labelledby="choose-gear" className="bg-surface pb-[100px] pt-[55px]">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-[43px] px-6">
         <h2 id="choose-gear" className="font-condensed text-[22px] font-semibold uppercase leading-none tracking-[0.16em] text-white">
           {heading}
         </h2>
@@ -48,7 +48,7 @@ export function ProductListing({
             No products match &ldquo;{query}&rdquo;. Try a different search.
           </p>
         ) : (
-          <div className="mt-2 grid grid-cols-2 gap-px bg-line md:grid-cols-3">
+          <div className="-mx-6 grid grid-cols-2 gap-px bg-line md:grid-cols-3">
             {shown.map((p, i) => (
               <ProductCard key={p.id} product={p} priority={i < 3} />
             ))}
