@@ -12,9 +12,9 @@ export const hero = {
   body:
     "Eastern Pro Gear designs and manufactures premium sports equipment, apparel, and accessories trusted by brands, teams, retailers, and athletes worldwide.",
   cards: [
-    { title: "For Champions", description: "Designs and manufactures premium sports equipment, apparel, and accessories.", image: assets.sportTiles[1].image, href: "/collection" },
-    { title: "For Athletes", description: "Designs and manufactures premium sports equipment, apparel, and accessories.", image: assets.sportTiles[0].image, href: "/men" },
-    { title: "For Leagues", description: "Designs and manufactures premium sports equipment, apparel, and accessories.", image: assets.sportTiles[2].image, href: "/custom" },
+    { title: "For Champions", description: "Designs and manufactures premium sports equipment, apparel, and accessories", image: "/images/498302a449ea.webp", href: "/collection" },
+    { title: "For Athletes", description: "Designs and manufactures premium sports equipment, apparel, and accessories", image: "/images/2c431db972fe.webp", href: "/men" },
+    { title: "For Leagues", description: "Designs and manufactures premium sports equipment, apparel, and accessories", image: "/images/dc5a37a2d841.webp", href: "/custom" },
   ],
 } as const;
 

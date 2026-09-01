@@ -17,8 +17,8 @@ export function Ticker({
   return (
     <div
       className={cn(
-        "relative flex h-[42px] items-center overflow-hidden",
-        "bg-linear-to-r from-brand-600 via-brand-400 to-brand-600",
+        "relative flex h-[48px] items-center overflow-hidden",
+        "bg-linear-to-r from-[#0e2745] via-[#1b4f8a] to-[#0e2745]",
         className
       )}
       aria-hidden
@@ -26,7 +26,7 @@ export function Ticker({
       <div className="animate-ticker flex w-max shrink-0 items-center gap-10 whitespace-nowrap">
         {run.map((item, i) => (
           <span key={`${item}-${i}`} className="flex items-center gap-10">
-            <span className={cn(textStyles.ticker, "text-[13px] tracking-[0.22em] text-white")}>{item}</span>
+            <span className={cn(textStyles.ticker, "text-[15px] tracking-[0.2em] text-white")}>{item}</span>
             <span className="size-1.5 shrink-0 bg-white/80" />
           </span>
         ))}

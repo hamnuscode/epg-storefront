@@ -75,7 +75,7 @@ export const textStyles = {
   /** Price, SF Compact 556 @ 26px -> Inter 500. */
   price: "font-sans font-medium text-2xl leading-[1.19] tracking-[-0.03em]",
   /** Nav links and buttons, SF Pro 590 @ 20px. */
-  nav: "font-sans font-semibold text-xl leading-[0.96] tracking-[-0.03em]",
+  nav: "font-sans text-[15px] font-medium uppercase leading-none tracking-[0.06em]",
   /** Body Base (named style), Inter 400 @ 20px. */
   bodyBase: "font-sans text-xl leading-[1.21] tracking-[-0.04em]",
   /** Body Small (named style), Inter 400 @ 16px. */
