@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/Button";
-import { gearProducts } from "@/lib/data";
+import { allProducts } from "@/lib/catalog";
 import { cn } from "@/lib/cn";
 
 const schema = z.object({
@@ -21,7 +21,7 @@ const schema = z.object({
 
 type Values = z.infer<typeof schema>;
 
-const LINE_ITEMS = gearProducts.slice(0, 3).map((p, i) => ({ ...p, qty: i === 0 ? 2 : 1 }));
+const LINE_ITEMS = allProducts.slice(0, 3).map((p, i) => ({ ...p, qty: i === 0 ? 2 : 1 }));
 
 /**
  * Figma: "Frame 427321786" — the checkout split. Left column is the address

@@ -1,115 +1,166 @@
 /**
- * Route configuration for the eight category pages. The Figma file draws
- * these as separate frames, but Martial Arts / Baseball / Golf share one
- * shell (4002px) and Men / Women / Kids share another (3066px) — so they
- * are one dynamic segment here, differing only in the data below.
+ * Per-page configuration for the seven category pages. The Figma frames for
+ * Martial Arts / Baseball / Golf are structurally identical, as are
+ * Men / Women / Kids — they differ only in the data below, so they share one
+ * dynamic route. Every image is the one the corresponding frame actually
+ * uses, taken from the manifest's frame attribution.
  */
-import { assets } from "./assets";
 import type { Product } from "@/types";
-import { gearProducts } from "./data";
+import type { Discipline } from "@/components/sections/DisciplineRail";
+import type { Hotspot } from "@/components/sections/PageHero";
+
+const img = (id: string) => `/images/${id}.webp`;
 
 export interface CategoryPage {
   slug: string;
-  /** Oversized display word bleeding behind the hero (Stack Sans Notch -> Anton). */
   display: string;
   title: string;
   tagline: string;
-  /** Sub-filters shown above the grid (Figma: Wireframe - 20 chip row). */
+  backdrop: string;
+  subject?: string;
+  hotspots?: Hotspot[];
+  /** Sport pages carry the discipline rail; audience pages do not. */
+  disciplines?: Discipline[];
   filters: string[];
-  /** Sport pages get a second CTA; audience pages do not. */
+  categories: string[];
   secondaryCta: boolean;
-  heroImage: string;
-  products: Product[];
+  product: { image: string; name: string; label: string; price: number; compareAt: number; colors: string[] };
+  count: number;
 }
 
-const pool = gearProducts;
-const slice = (n: number, offset = 0) =>
-  Array.from({ length: n }, (_, i) => {
-    const base = pool[(i + offset) % pool.length];
-    return { ...base, id: `${base.id}-${i + offset}` };
-  });
+const MARTIAL_DISCIPLINES: Discipline[] = [
+  { label: "MMA", image: img("3cb4e3a8ae87") },
+  { label: "Boxing", image: img("8539d7e3f4e8") },
+  { label: "Muay Thai", image: img("5909ed35a6c2") },
+  { label: "Karate", image: img("3bc1e44b126f") },
+];
+
+const DOTS = ["#e8e8e8", "#2f6fd0"];
 
 export const categoryPages: CategoryPage[] = [
   {
     slug: "martial-arts",
-    display: "discipline",
+    display: "Discipline",
     title: "Martial Arts",
     tagline: "Your next round starts here!",
-    filters: ["All", "Shorts", "Guards", "BJJ", "Karate", "Taekwondo", "Uniforms"],
+    backdrop: img("0fbc8158251d"),
+    subject: img("cb7c051a0793"),
+    hotspots: [
+      { label: "Karate Gi", top: "34%", left: "14%" },
+      { label: "Karate Belt", top: "48%", left: "43%" },
+    ],
+    disciplines: MARTIAL_DISCIPLINES,
+    filters: ["All", "Shorts", "Guards", "BJJ", "Uniforms"],
+    categories: ["Select Category", "Head Guards", "Gloves", "Shin Guards", "Uniforms"],
     secondaryCta: true,
-    heroImage: assets.categoryHeroes["martial-arts"],
-    products: slice(8),
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "MMA", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 8,
   },
   {
     slug: "baseball",
     display: "Power",
     title: "Baseball",
     tagline: "Your next winning gear awaits!",
-    filters: ["All", "Gloves", "Bats", "Helmets", "Jerseys", "Cleats"],
+    backdrop: img("afe7618bb68f"),
+    subject: img("005a67db1b09"),
+    hotspots: [
+      { label: "Team Jersey", top: "30%", left: "16%" },
+      { label: "Batting Glove", top: "46%", left: "46%" },
+    ],
+    disciplines: MARTIAL_DISCIPLINES,
+    filters: ["All", "Gloves", "Bats", "Helmets", "Jerseys"],
+    categories: ["Select Category", "Gloves", "Bats", "Helmets", "Cleats"],
     secondaryCta: true,
-    heroImage: assets.categoryHeroes["baseball"],
-    products: slice(8, 2),
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Baseball", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 8,
   },
   {
     slug: "golf",
-    display: "PRECISION",
+    display: "Precision",
     title: "Golf",
     tagline: "Premium experience starts here!",
-    filters: ["All", "Gloves", "Polos", "Caps", "Bags", "Accessories"],
+    backdrop: img("12860fe2489b"),
+    subject: img("2d36f9b91a2e"),
+    hotspots: [
+      { label: "Golf Polo", top: "32%", left: "18%" },
+      { label: "Golf Glove", top: "50%", left: "48%" },
+    ],
+    disciplines: MARTIAL_DISCIPLINES,
+    filters: ["All", "Gloves", "Polos", "Caps", "Bags"],
+    categories: ["Select Category", "Gloves", "Apparel", "Accessories"],
     secondaryCta: true,
-    heroImage: assets.categoryHeroes["golf"],
-    products: slice(8, 4),
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "Golf", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 8,
   },
   {
     slug: "men",
-    display: "MEN",
+    display: "Men",
     title: "Men",
     tagline: "Performance-driven style, crafted for men.",
-    filters: ["All", "Tops", "Bottoms", "Outerwear", "Footwear"],
+    backdrop: img("12860fe2489b"),
+    subject: img("286cbe3b7b66"),
+    filters: ["All", "Tops", "Bottoms", "Outerwear"],
+    categories: ["Select Category", "Tops", "Bottoms", "Footwear"],
     secondaryCta: false,
-    heroImage: assets.categoryHeroes["men"],
-    products: slice(8, 1),
+    product: { image: img("2270a2e8782e"), name: "Training Kit", label: "Men", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 6,
   },
   {
     slug: "women",
-    display: "women",
+    display: "Women",
     title: "Women",
     tagline: "Confident, everyday essentials, designed for women.",
-    filters: ["All", "Tops", "Bottoms", "Outerwear", "Footwear"],
+    backdrop: img("12860fe2489b"),
+    subject: img("7a74f883ba54"),
+    filters: ["All", "Tops", "Bottoms", "Outerwear"],
+    categories: ["Select Category", "Tops", "Bottoms", "Footwear"],
     secondaryCta: false,
-    heroImage: assets.categoryHeroes["women"],
-    products: slice(8, 3),
+    product: { image: img("c4d108649e20"), name: "Training Kit", label: "Women", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 6,
   },
   {
     slug: "kids",
-    display: "kids",
+    display: "Kids",
     title: "Kids",
     tagline: "Durable, playproof comfort, built for kids.",
-    filters: ["All", "Tops", "Bottoms", "Protective", "Footwear"],
+    backdrop: img("12860fe2489b"),
+    subject: img("193746e4e27f"),
+    filters: ["All", "Tops", "Bottoms", "Protective"],
+    categories: ["Select Category", "Tops", "Bottoms", "Footwear"],
     secondaryCta: false,
-    heroImage: assets.categoryHeroes["kids"],
-    products: slice(8, 5),
+    product: { image: img("319085dbdc81"), name: "Training Kit", label: "Kids", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 6,
   },
   {
     slug: "collection",
     display: "Collection",
     title: "Collection",
     tagline: "Premium, limited-edition designs, curated for everyone.",
+    backdrop: img("86f34368631c"),
+    subject: img("dd328aab9ae9"),
+    disciplines: MARTIAL_DISCIPLINES,
     filters: ["All", "Equipment", "Apparel", "Accessories", "Limited"],
+    categories: ["Select Category", "Equipment", "Apparel", "Accessories"],
     secondaryCta: true,
-    heroImage: assets.categoryHeroes["collection"],
-    products: slice(12),
+    product: { image: img("33935de05351"), name: "Head Guard for Training", label: "MMA", price: 69.99, compareAt: 89.99, colors: DOTS },
+    count: 9,
   },
 ];
 
-export const getCategory = (slug: string) =>
-  categoryPages.find((c) => c.slug === slug);
+export const getCategory = (slug: string) => categoryPages.find((c) => c.slug === slug);
 
-/** Flat product lookup for the product detail route. */
-export const allProducts: Product[] = [
-  ...gearProducts,
-  ...categoryPages.flatMap((c) => c.products),
-];
+/** The listing grid repeats one product, exactly as the frames do. */
+export const productsFor = (page: CategoryPage): Product[] =>
+  Array.from({ length: page.count }, (_, i) => ({
+    id: `${page.slug}-${i + 1}`,
+    name: page.product.name,
+    price: page.product.price,
+    compareAtPrice: page.product.compareAt,
+    image: page.product.image,
+    category: "martial-arts" as const,
+    categoryLabel: page.product.label,
+    colors: page.product.colors,
+  }));
 
-export const getProduct = (id: string) =>
-  allProducts.find((p) => p.id === id) ?? gearProducts[0];
+export const allProducts: Product[] = categoryPages.flatMap(productsFor);
+export const getProduct = (id: string) => allProducts.find((p) => p.id === id) ?? allProducts[0];

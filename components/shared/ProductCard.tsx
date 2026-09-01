@@ -1,73 +1,88 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
 import { cn } from "@/lib/cn";
-import { textStyles } from "@/lib/typography";
 import type { Product } from "@/types";
 
 /**
- * Featured Products grid tile (Figma: Component 2/3/4 at 338x338) and the
- * larger carousel card (428x428). Image scales on hover; the whole tile is
- * one link so the hit target matches the visual card.
+ * Figma: the listing tile on every category page. The shot fills the upper
+ * area with a square "+" affordance at its lower right; beneath sits the blue
+ * category tag, the name, a struck-through compare-at price beside the live
+ * price, and the available colourways as dots.
  */
 export const ProductCard = memo(function ProductCard({
   product,
-  size = "grid",
   priority = false,
   className,
 }: {
   product: Product;
-  size?: "grid" | "carousel";
   priority?: boolean;
   className?: string;
 }) {
-  const dim = size === "carousel" ? 428 : 338;
-
   return (
-    <article
-      className={cn(
-        "group relative shrink-0 snap-start overflow-hidden rounded-lg bg-surface-raised",
-        size === "carousel" ? "w-[428px] max-w-[85vw]" : "w-full",
-        className
-      )}
-    >
-      <Link href={`/product/${product.id}`} className="block focus:outline-none">
-        <div className="relative aspect-square overflow-hidden">
+    <article className={cn("group relative bg-surface-raised", className)}>
+      <Link href={`/product/${product.id}`} className="block">
+        <div className="relative aspect-[430/300] overflow-hidden">
+          <span
+            aria-hidden
+            className="absolute bottom-3 right-3 z-10 grid size-7 place-items-center bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-surface"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+            </svg>
+          </span>
           <Image
             src={product.image}
             alt={product.name}
-            width={dim}
-            height={dim}
+            fill
             priority={priority}
             loading={priority ? undefined : "lazy"}
-            sizes={size === "carousel" ? "428px" : "(max-width: 768px) 50vw, 338px"}
-            className="size-full object-cover transition-transform duration-700 [transition-timing-function:var(--ease-out-soft)] group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 430px"
+            className="object-contain p-4 transition-transform duration-500 [transition-timing-function:var(--ease-out-soft)] group-hover:scale-105"
           />
-          {product.badge && (
-            <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 font-sans text-xs font-semibold uppercase tracking-wider text-surface">
-              {product.badge}
+        </div>
+
+        <div className="flex flex-col gap-1.5 px-4 pb-5">
+          <span className="flex items-center gap-1.5 font-condensed text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-400">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M12 2l7 4v6c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z" />
+            </svg>
+            {product.categoryLabel ?? "MMA"}
+          </span>
+
+          <h3 className="font-sans text-[14px] font-medium tracking-[-0.01em] text-white">
+            {product.name}
+          </h3>
+
+          <p className="flex items-baseline gap-2">
+            {product.compareAtPrice && (
+              <span className="font-sans text-[11px] tabular-nums text-white/35 line-through">
+                ${product.compareAtPrice.toFixed(2)}
+              </span>
+            )}
+            <span className="font-sans text-[13px] font-medium tabular-nums text-white">
+              ${product.price.toFixed(2)}
+            </span>
+          </p>
+
+          {product.colors && (
+            <span className="mt-0.5 flex items-center gap-1.5">
+              {product.colors.map((c) => (
+                <span
+                  key={c}
+                  className="size-2.5 rounded-full ring-1 ring-white/20"
+                  style={{ background: c }}
+                  aria-hidden
+                />
+              ))}
+              <span className="sr-only">{product.colors.length} colourways available</span>
             </span>
           )}
-          {/* Bottom scrim keeps the title legible over light product shots */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/80 to-transparent" />
-
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5">
-            <h3 className={cn(textStyles.productTitle, "text-white")}>
-              {product.name}
-            </h3>
-            <div className="flex flex-col items-end">
-              {product.compareAtPrice && (
-                <span className="font-sans text-sm text-white/50 line-through">
-                  ${product.compareAtPrice.toFixed(2)}
-                </span>
-              )}
-              <span className={cn(textStyles.price, "text-white")}>
-                ${product.price.toFixed(2)}
-              </span>
-            </div>
-          </div>
         </div>
       </Link>
+
     </article>
   );
 });

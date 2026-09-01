@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { Forgex } from "@/components/sections/Forgex";
-import { ProductListing } from "@/components/sections/ProductListing";
 import { Footer } from "@/components/layouts/Footer";
 import { assets } from "@/lib/assets";
-import { gearProducts } from "@/lib/data";
+
 import { Container } from "@/components/ui/Container";
 import { textStyles } from "@/lib/typography";
 import { cn } from "@/lib/cn";
@@ -30,7 +29,7 @@ export default function CustomPage() {
           display="Design in Real Time."
           title="Custom Gear"
           tagline="From digital mesh to master design."
-          image={assets.categoryHeroes["custom"]}
+          backdrop={assets.categoryHeroes["custom"]}
           primaryCta={{ label: "START DESIGNING", href: "#configurator" }}
         />
 
@@ -59,11 +58,6 @@ export default function CustomPage() {
             </ol>
           </Container>
         </section>
-
-        <ProductListing
-          products={gearProducts}
-          filters={["All", "Apparel", "Equipment", "Team Kit"]}
-        />
       </main>
       <Footer />
     </>

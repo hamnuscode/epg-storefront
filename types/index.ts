@@ -9,6 +9,10 @@ export interface Product {
   category: SportCategory;
   rating?: number;
   badge?: string;
+  /** Small blue tag above the name, e.g. "MMA". */
+  categoryLabel?: string;
+  /** Colourway dots beneath the price. */
+  colors?: string[];
 }
 
 export type SportCategory =

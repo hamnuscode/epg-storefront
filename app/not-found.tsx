@@ -12,7 +12,7 @@ export default function NotFound() {
           display="404"
           title="Oops, I think we&rsquo;re lost"
           tagline="Let&rsquo;s get you back somewhere familiar..."
-          image={assets.categoryHeroes["404"]}
+          backdrop={assets.categoryHeroes["404"]}
           primaryCta={{ label: "BACK TO HOME", href: "/" }}
         />
       </main>

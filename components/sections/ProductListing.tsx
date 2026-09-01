@@ -1,81 +1,56 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Container } from "@/components/ui/Container";
-import { FilterPills } from "@/components/ui/FilterPills";
+import { GearToolbar } from "@/components/ui/GearToolbar";
 import { ProductCard } from "@/components/shared/ProductCard";
-import { cn } from "@/lib/cn";
 import type { Product } from "@/types";
 
-const SORTS = ["Featured", "Price: low to high", "Price: high to low"] as const;
-
 /**
- * Figma: "Wireframe - 20" (1440x2183) and "Wireframe - 21" (1440x1562) —
- * the same listing block at two grid heights. "choose your gear" heading,
- * a chip row of sub-filters, a sort control, then the product grid.
+ * Figma: "Wireframe - 20" / "Wireframe - 21" — the listing block.
+ * "CHOOSE YOUR GEAR" heading, the toolbar row, then a three-column grid
+ * whose tiles sit flush against a hairline gutter.
  */
 export function ProductListing({
-  products,
-  filters,
+  products, filters, categories,
 }: {
   products: Product[];
   filters: string[];
+  categories: string[];
 }) {
   const [filter, setFilter] = useState(filters[0]);
-  const [sort, setSort] = useState<string>(SORTS[0]);
+  const [category, setCategory] = useState(categories[0]);
+  const [query, setQuery] = useState("");
 
   const shown = useMemo(() => {
-    const list = [...products];
-    if (sort === "Price: low to high") list.sort((a, b) => a.price - b.price);
-    if (sort === "Price: high to low") list.sort((a, b) => b.price - a.price);
-    return list;
-  }, [products, sort]);
+    const q = query.trim().toLowerCase();
+    return q ? products.filter((p) => p.name.toLowerCase().includes(q)) : products;
+  }, [products, query]);
 
   return (
-    <section id="gear" aria-labelledby="choose-gear" className="bg-surface pb-25 pt-14">
-      <Container className="flex flex-col gap-11">
-        <h2
-          id="choose-gear"
-          className="font-condensed text-3xl font-semibold uppercase tracking-[0.1em] text-white"
-        >
-          choose your gear
+    <section id="gear" aria-labelledby="choose-gear" className="bg-surface pb-20 pt-6">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-6 md:px-12">
+        <h2 id="choose-gear" className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-white">
+          Choose Your Gear
         </h2>
 
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <FilterPills
-            label="Filter by product type"
-            options={filters}
-            value={filter}
-            onChange={setFilter}
-            className="flex-wrap"
-          />
+        <GearToolbar
+          filters={filters} filter={filter} onFilter={setFilter}
+          categories={categories} category={category} onCategory={setCategory}
+          query={query} onQuery={setQuery}
+        />
 
-          <label className="flex items-center gap-3">
-            <span className="font-condensed text-base uppercase tracking-[0.14em] text-white/50">
-              Sort
-            </span>
-            <select
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-              className={cn(
-                "h-10 rounded-xl border border-line bg-surface-raised px-3",
-                "font-sans text-base text-white outline-none",
-                "focus-visible:border-brand-400"
-              )}
-            >
-              {SORTS.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-          </label>
-        </div>
-
-        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
-          {shown.map((p, i) => (
-            <ProductCard key={p.id} product={p} priority={i < 4} />
-          ))}
-        </div>
-      </Container>
+        {shown.length === 0 ? (
+          <p role="status" className="py-16 text-center font-sans text-sm text-white/50">
+            No products match &ldquo;{query}&rdquo;. Try a different search.
+          </p>
+        ) : (
+          <div className="mt-2 grid grid-cols-2 gap-px bg-line md:grid-cols-3">
+            {shown.map((p, i) => (
+              <ProductCard key={p.id} product={p} priority={i < 3} />
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   );
 }

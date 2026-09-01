@@ -1,39 +1,30 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/sections/PageHero";
+import { DisciplineRail } from "@/components/sections/DisciplineRail";
 import { ProductListing } from "@/components/sections/ProductListing";
 import { Footer } from "@/components/layouts/Footer";
-import { categoryPages, getCategory } from "@/lib/catalog";
+import { categoryPages, getCategory, productsFor } from "@/lib/catalog";
 
-/** Statically render all seven category pages at build time. */
 export function generateStaticParams() {
   return categoryPages.map((c) => ({ category: c.slug }));
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ category: string }>;
-}): Promise<Metadata> {
+}: { params: Promise<{ category: string }> }): Promise<Metadata> {
   const { category } = await params;
   const page = getCategory(category);
-  if (!page) return {};
-  return {
-    title: `${page.title} — EPG`,
-    description: page.tagline,
-  };
+  return page ? { title: `${page.title} — EPG`, description: page.tagline } : {};
 }
 
 /**
  * Figma: "Martial Arts" / "Baseball" / "Golf" (4002px) and
- * "Men" / "Women" / "Kids" / "Collection" (3066–3381px). Structurally
- * identical, so they share this route.
+ * "Men" / "Women" / "Kids" / "Collection" (3066–3381px).
  */
 export default async function CategoryPage({
   params,
-}: {
-  params: Promise<{ category: string }>;
-}) {
+}: { params: Promise<{ category: string }> }) {
   const { category } = await params;
   const page = getCategory(category);
   if (!page) notFound();
@@ -45,12 +36,19 @@ export default async function CategoryPage({
           display={page.display}
           title={page.title}
           tagline={page.tagline}
-          image={page.heroImage}
-          secondaryCta={
-            page.secondaryCta ? { label: "CUSTOM GEAR", href: "/custom" } : undefined
-          }
+          backdrop={page.backdrop}
+          subject={page.subject}
+          hotspots={page.hotspots}
+          secondaryCta={page.secondaryCta ? { label: "Custom Gear", href: "/custom" } : undefined}
         />
-        <ProductListing products={page.products} filters={page.filters} />
+
+        {page.disciplines && <DisciplineRail items={page.disciplines} />}
+
+        <ProductListing
+          products={productsFor(page)}
+          filters={page.filters}
+          categories={page.categories}
+        />
       </main>
       <Footer />
     </>

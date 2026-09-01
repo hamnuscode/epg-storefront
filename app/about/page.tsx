@@ -31,7 +31,7 @@ export default function AboutPage() {
           display="EPG"
           title="About Us"
           tagline="Built for athletes, by athletes."
-          image={assets.categoryHeroes["about"]}
+          backdrop={assets.categoryHeroes["about"]}
           primaryCta={{ label: "OUR STORY", href: "#story" }}
         />
 
