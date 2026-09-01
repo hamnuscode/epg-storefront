@@ -1,0 +1,12 @@
+import puppeteer from "puppeteer-core";
+const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const url = process.argv[2], width = Number(process.argv[3]), out = process.argv[4];
+const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--disable-gpu","--hide-scrollbars","--no-sandbox"] });
+const p = await b.newPage();
+await p.setCacheEnabled(false);
+await p.setViewport({ width, height: 1200, deviceScaleFactor: 1 });
+await p.goto(url, { waitUntil: "networkidle2", timeout: 90000 });
+await p.evaluate(async () => { await document.fonts.ready; await new Promise(r=>{let y=0;const s=()=>{window.scrollTo(0,y);y+=700;if(y<document.body.scrollHeight)setTimeout(s,40);else{window.scrollTo(0,0);setTimeout(r,500);}};s();}); });
+await p.screenshot({ path: out, fullPage: true });
+console.log(JSON.stringify(await p.evaluate(()=>({w:document.documentElement.scrollWidth,h:document.body.scrollHeight}))));
+await b.close();

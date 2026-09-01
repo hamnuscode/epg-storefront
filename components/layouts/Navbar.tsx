@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
@@ -33,14 +33,33 @@ export const NAV_LINKS: NavLink[] = [
  */
 export function Navbar({ className }: { className?: string }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // Close the desktop dropdown on Escape, matching the drawer's behaviour.
+  /**
+   * The dropdown is click-driven: it stays open until the trigger is clicked
+   * again, an item is chosen, Escape is pressed, or the pointer clicks away.
+   * Deliberately no hover open/close — a menu that closes on mouseleave is
+   * near-impossible to travel into.
+   */
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpenMenu(null);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+    if (!openMenu) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenMenu(null);
+        navRef.current?.querySelector<HTMLElement>(`[data-menu-trigger="${openMenu}"]`)?.focus();
+      }
+    };
+    const onPointer = (e: PointerEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) setOpenMenu(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [openMenu]);
 
   return (
     <>
@@ -51,6 +70,7 @@ export function Navbar({ className }: { className?: string }) {
         )}
       >
         <nav
+          ref={navRef}
           aria-label="Main"
           className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-6"
         >
@@ -85,15 +105,15 @@ export function Navbar({ className }: { className?: string }) {
                 <li
                   key={link.label}
                   className="relative"
-                  onMouseEnter={() => link.children && setOpenMenu(link.label)}
-                  onMouseLeave={() => link.children && setOpenMenu(null)}
                 >
                   {link.children ? (
                     <>
                       <button
                         type="button"
+                        data-menu-trigger={link.label}
                         aria-expanded={openMenu === link.label}
                         aria-haspopup="true"
+                        aria-controls={`menu-${link.label}`}
                         onClick={() =>
                           setOpenMenu(openMenu === link.label ? null : link.label)
                         }
@@ -114,11 +134,15 @@ export function Navbar({ className }: { className?: string }) {
                         </svg>
                       </button>
                       {openMenu === link.label && (
-                        <ul className="absolute left-0 top-full z-50 mt-3 min-w-48 rounded-lg border border-line bg-surface-overlay p-2 shadow-2xl">
+                        <ul
+                          id={`menu-${link.label}`}
+                          className="absolute left-0 top-full z-50 mt-3 min-w-48 rounded-lg border border-line bg-surface-overlay p-2 shadow-2xl"
+                        >
                           {link.children.map((child) => (
                             <li key={child.label}>
                               <Link
                                 href={child.href}
+                                onClick={() => setOpenMenu(null)}
                                 className="block rounded-sm px-3 py-2 font-sans text-base text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                               >
                                 {child.label}

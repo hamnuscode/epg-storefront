@@ -18,18 +18,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 for (const f of todo) {
   const scale = f.w >= 1000 ? 0.5 : 1;
   let url = null;
-  for (let a = 0; a < 12 && !url; a++) {
+  for (let a = 0; a < 40 && !url; a++) {
     const res = await fetch(`https://api.figma.com/v1/images/${KEY}?ids=${f.id}&format=png&scale=${scale}`, {
       headers: { "X-Figma-Token": token },
     });
     const body = await res.json();
     if (!body.err && body.images?.[f.id]) { url = body.images[f.id]; break; }
-    await sleep(45000);
+    await sleep(300000); // Figma's render limit resets slowly
   }
   if (!url) { console.log(`  gave up: ${f.name}`); continue; }
   const img = await fetch(url);
   writeFileSync(`.figma/renders/${slug(f.name)}.png`, Buffer.from(await img.arrayBuffer()));
   console.log(`  ok ${f.name}`);
-  await sleep(8000);
+  await sleep(20000);
 }
 console.log("done");

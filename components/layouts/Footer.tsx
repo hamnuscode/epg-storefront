@@ -4,39 +4,43 @@ import { Button } from "@/components/ui/Button";
 import { footer, TICKER_ITEMS } from "@/lib/data";
 
 /**
- * Figma: "Footer" (1440x734). Deep-navy ground with skewed gradient panels
- * sweeping across it, the brand lockup and email capture ranged left, the
- * Categories / Sports / Contact columns right, and a hairline rule above the
- * copyright row.
+ * Figma: "Footer" (1440x734). Near-black ground with skewed dark-blue
+ * gradient bands sweeping across it. The brand lockup sits top-left with
+ * "GEAR THAT PERFORMS" beneath it; the three link columns are top-aligned to
+ * the right. The email capture is its own band lower down — a long underline
+ * rule with the skewed SUBSCRIBE button beside it — then a hairline and the
+ * copyright / social row.
  */
 export function Footer() {
   return (
     <footer className="bg-surface">
       <Ticker items={TICKER_ITEMS} />
 
-      <div className="relative isolate overflow-hidden bg-navy-900">
-        {/* Angled gradient panels — decorative, matching the render */}
+      <div className="relative isolate overflow-hidden bg-surface">
+        {/* Skewed gradient bands. Two clusters, as drawn: one behind the
+            columns, one lower-left behind the email row. */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <span className="absolute -left-24 top-16 h-28 w-[46%] -skew-x-[28deg] bg-linear-to-r from-brand-600/45 to-transparent" />
-          <span className="absolute left-[18%] top-36 h-24 w-[52%] -skew-x-[28deg] bg-linear-to-r from-brand-500/25 to-transparent" />
-          <span className="absolute -left-10 bottom-24 h-24 w-[38%] -skew-x-[28deg] bg-linear-to-r from-brand-600/30 to-transparent" />
-          <span className="absolute right-[-8%] top-8 h-40 w-[34%] -skew-x-[28deg] bg-linear-to-l from-brand-600/30 to-transparent" />
+          <span className="absolute left-[20%] top-0 h-[190px] w-[30%] -skew-x-[26deg] bg-linear-to-r from-[#16294a]/85 to-[#0f1c33]/10" />
+          <span className="absolute left-[42%] top-0 h-[190px] w-[26%] -skew-x-[26deg] bg-linear-to-r from-[#132340]/70 to-transparent" />
+          <span className="absolute left-[64%] top-0 h-[190px] w-[30%] -skew-x-[26deg] bg-linear-to-r from-[#16294a]/60 to-transparent" />
+          <span className="absolute -left-[6%] top-[250px] h-[120px] w-[36%] -skew-x-[26deg] bg-linear-to-r from-transparent via-[#132340]/60 to-transparent" />
+          <span className="absolute left-[26%] top-[250px] h-[120px] w-[40%] -skew-x-[26deg] bg-linear-to-r from-[#16294a]/55 to-transparent" />
+          <span className="absolute left-[62%] top-[250px] h-[120px] w-[34%] -skew-x-[26deg] bg-linear-to-r from-[#132340]/45 to-transparent" />
         </div>
 
-        <div className="mx-auto max-w-[1440px] px-6 py-14 md:px-12 md:py-16">
+        <div className="mx-auto max-w-[1440px] px-6 pb-8 pt-14 md:px-14">
+          {/* Brand + columns */}
           <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
-            {/* Brand + subscribe */}
-            <div className="flex max-w-[420px] flex-col gap-10">
-              <p className="font-sans text-[clamp(1.6rem,3vw,2.4rem)] font-semibold leading-none tracking-[-0.035em] text-white">
+            <div className="flex flex-col gap-10">
+              <p className="font-sans text-[clamp(1.6rem,3vw,2.35rem)] font-medium leading-none tracking-[-0.03em] text-white">
                 {footer.brand}
               </p>
-              <p className="font-condensed text-[11px] uppercase leading-[1.5] tracking-[0.22em] text-white/55">
+              <p className="font-condensed text-[11px] font-semibold uppercase leading-[1.6] tracking-[0.22em] text-white/85">
                 Gear That<br />Performs
               </p>
             </div>
 
-            {/* Columns */}
-            <div className="grid gap-10 sm:grid-cols-3">
+            <div className="grid gap-10 sm:grid-cols-3 lg:w-[58%] lg:gap-8">
               {footer.columns.map((col) => (
                 <nav key={col.heading} aria-label={col.heading} className="flex flex-col gap-4">
                   <h2 className="font-condensed text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
@@ -45,7 +49,7 @@ export function Footer() {
                   <ul className="flex flex-col gap-2.5">
                     {col.links.map((link) => (
                       <li key={link.label}>
-                        <Link href={link.href} className="font-sans text-xs text-white/55 transition-colors hover:text-white">
+                        <Link href={link.href} className="font-sans text-[12px] text-white/60 transition-colors hover:text-white">
                           {link.label}
                         </Link>
                       </li>
@@ -58,21 +62,21 @@ export function Footer() {
                 <h2 className="font-condensed text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
                   {footer.contact.heading}
                 </h2>
-                <p className="whitespace-pre-line font-sans text-xs leading-[1.7] text-white/55">
+                <p className="whitespace-pre-line font-sans text-[12px] leading-[1.65] text-white/60">
                   {footer.contact.hours}
                 </p>
-                <a href={`tel:${footer.contact.phone.replace(/[^+\d]/g, "")}`} className="font-sans text-xs text-white/55 hover:text-white">
+                <a href={`tel:${footer.contact.phone.replace(/[^+\d]/g, "")}`} className="font-sans text-[12px] text-white/60 hover:text-white">
                   {footer.contact.phone}
                 </a>
-                <a href={`mailto:${footer.contact.email}`} className="font-sans text-xs text-white/55 hover:text-white">
+                <a href={`mailto:${footer.contact.email}`} className="font-sans text-[12px] text-white/60 hover:text-white">
                   {footer.contact.email}
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Underline email capture */}
-          <form className="mt-14 flex max-w-[420px] items-end gap-4">
+          {/* Email capture band */}
+          <form className="mt-16 flex max-w-[560px] items-end gap-8">
             <div className="flex-1">
               <label htmlFor="footer-email" className="sr-only">Email address</label>
               <input
@@ -80,23 +84,26 @@ export function Footer() {
                 type="email"
                 required
                 placeholder="EMAIL ADDRESS"
-                className="w-full border-b border-white/35 bg-transparent pb-2 font-condensed text-[11px] uppercase tracking-[0.2em] text-white outline-none transition-colors placeholder:text-white/45 focus-visible:border-white"
+                className="w-full border-b border-white/45 bg-transparent pb-2.5 font-condensed text-[11px] font-semibold uppercase tracking-[0.2em] text-white outline-none transition-colors placeholder:text-white/85 focus-visible:border-white"
               />
             </div>
-            <Button type="submit" variant="outline" size="sm">Subscribe</Button>
+            <Button type="submit" variant="outline" size="sm" className="shrink-0">
+              Subscribe
+            </Button>
           </form>
 
-          <div className="mt-12 flex flex-col gap-4 border-t border-white/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-sans text-[11px] text-white/45">{footer.copyright}</p>
-            <div className="flex items-center gap-4">
-              <span className="font-sans text-[11px] text-white/45">Follow</span>
+          {/* Legal row */}
+          <div className="mt-14 flex flex-col gap-4 border-t border-white/15 pt-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-sans text-[12px] text-white/65">{footer.copyright}</p>
+            <div className="flex items-center gap-3.5">
+              <span className="font-sans text-[12px] text-white/65">Follow</span>
               {[
-                { label: "Instagram", d: "M7.5 3.5h9a4 4 0 014 4v9a4 4 0 01-4 4h-9a4 4 0 01-4-4v-9a4 4 0 014-4z M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z M17 6.6v.01" },
-                { label: "Facebook", d: "M14 8.5h2V5.6h-2.2c-2 0-3.3 1.3-3.3 3.4V11H8.5v3H10.5v6h3v-6h2.2l.4-3h-2.6V9.4c0-.6.2-.9.9-.9z" },
-                { label: "YouTube", d: "M3.5 8.5a3 3 0 013-3h11a3 3 0 013 3v7a3 3 0 01-3 3h-11a3 3 0 01-3-3z M10.5 9.8l4.2 2.2-4.2 2.2z" },
+                { label: "Instagram", d: "M7.8 3.6h8.4a4.2 4.2 0 0 1 4.2 4.2v8.4a4.2 4.2 0 0 1-4.2 4.2H7.8a4.2 4.2 0 0 1-4.2-4.2V7.8a4.2 4.2 0 0 1 4.2-4.2Z M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2Z M17 6.9h.01" },
+                { label: "Facebook", d: "M13.6 21v-8h2.6l.4-3h-3V8.2c0-.9.3-1.4 1.5-1.4H16.7V4.1A20 20 0 0 0 14.4 4c-2.3 0-3.8 1.4-3.8 3.9V10H8v3h2.6v8h3Z" },
+                { label: "YouTube", d: "M3.6 8.4a3 3 0 0 1 3-3h10.8a3 3 0 0 1 3 3v7.2a3 3 0 0 1-3 3H6.6a3 3 0 0 1-3-3V8.4Z M10.6 9.6 15 12l-4.4 2.4V9.6Z" },
               ].map((s) => (
-                <a key={s.label} href="#" aria-label={s.label} className="text-white/50 transition-colors hover:text-white">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <a key={s.label} href="#" aria-label={s.label} className="text-white/60 transition-colors hover:text-white">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                     <path d={s.d} />
                   </svg>
                 </a>

@@ -11,13 +11,13 @@ import { hero } from "@/lib/data";
  */
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-navy-800">
+    <section className="relative isolate flex min-h-svh flex-col overflow-hidden bg-navy-800">
       {/* Navy field with a soft vertical lift, matching the render */}
       <div aria-hidden className="absolute inset-0 -z-20 bg-linear-to-b from-navy-900 via-navy-700 to-navy-800" />
 
       <Navbar />
 
-      <div className="relative mx-auto max-w-[1440px] px-6 pt-[60px] md:px-12">
+      <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-6 pt-[60px] md:px-12">
         {/* Wordmark behind the subject */}
         <span
           aria-hidden
@@ -55,7 +55,7 @@ export function Hero() {
       </div>
 
       {/* Cards straddling the lower edge */}
-      <div className="relative z-20 mx-auto -mt-16 max-w-[1440px] px-6 pb-8 md:-mt-24 md:px-12">
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] shrink-0 px-6 pb-8 md:px-12">
         <div className="grid gap-4 md:grid-cols-3">
           {hero.cards.map((card) => (
             <Link
