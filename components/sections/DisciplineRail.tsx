@@ -26,7 +26,7 @@ export function DisciplineRail({
   return (
     <section aria-labelledby="disciplines" className="bg-surface pb-10 pt-12">
       <div className="mx-auto max-w-[1440px] px-6 md:px-12">
-        <h2 id="disciplines" className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-white">
+        <h2 id="disciplines" className="font-condensed text-[22px] font-semibold uppercase leading-none tracking-[0.16em] text-white">
           {heading}
         </h2>
       </div>

@@ -11,15 +11,17 @@ import type { Product } from "@/types";
  * whose tiles sit flush against a hairline gutter.
  */
 export function ProductListing({
-  products, filters, categories, heading = "Choose Your Gear",
+  products, filters, categories, sports, heading = "Choose Your Gear",
 }: {
   products: Product[];
   filters: string[];
   categories: string[];
+  sports?: string[];
   heading?: string;
 }) {
   const [filter, setFilter] = useState(filters[0]);
   const [category, setCategory] = useState(categories[0]);
+  const [sport, setSport] = useState(sports?.[0] ?? "");
   const [query, setQuery] = useState("");
 
   const shown = useMemo(() => {
@@ -30,13 +32,14 @@ export function ProductListing({
   return (
     <section id="gear" aria-labelledby="choose-gear" className="bg-surface pb-20 pt-6">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-6 md:px-12">
-        <h2 id="choose-gear" className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-white">
+        <h2 id="choose-gear" className="font-condensed text-[22px] font-semibold uppercase leading-none tracking-[0.16em] text-white">
           {heading}
         </h2>
 
         <GearToolbar
           filters={filters} filter={filter} onFilter={setFilter}
           categories={categories} category={category} onCategory={setCategory}
+          sports={sports} sport={sport} onSport={setSport}
           query={query} onQuery={setQuery}
         />
 

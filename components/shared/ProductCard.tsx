@@ -24,12 +24,12 @@ export const ProductCard = memo(function ProductCard({
   return (
     <article className={cn("group relative min-w-0 bg-surface-raised", className)}>
       <Link href={`/product/${product.id}`} className="block">
-        <div className="relative aspect-[430/300] overflow-hidden">
+        <div className="relative aspect-[430/340] overflow-hidden">
           <span
             aria-hidden
-            className="absolute bottom-3 right-3 z-10 grid size-7 place-items-center bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-surface"
+            className="absolute bottom-4 right-4 z-10 grid size-11 place-items-center bg-white/12 text-white backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-surface"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="M12 5v14M5 12h14" strokeLinecap="round" />
             </svg>
           </span>
@@ -45,24 +45,24 @@ export const ProductCard = memo(function ProductCard({
         </div>
 
         <div className="flex min-w-0 flex-col gap-1.5 px-4 pb-5">
-          <span className="flex items-center gap-1.5 font-condensed text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-400">
+          <span className="flex items-center gap-1.5 font-condensed text-[12px] font-semibold uppercase tracking-[0.16em] text-brand-400">
             <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M12 2l7 4v6c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z" />
             </svg>
             {product.categoryLabel ?? "MMA"}
           </span>
 
-          <h3 className="truncate font-sans text-[12px] md:text-[13px] font-medium tracking-[-0.01em] text-white md:text-[14px]">
+          <h3 className="truncate font-sans text-[15px] font-medium tracking-[-0.01em] text-white md:text-[17px]">
             {product.name}
           </h3>
 
           <p className="flex items-baseline gap-2">
             {product.compareAtPrice && (
-              <span className="font-sans text-[11px] tabular-nums text-white/35 line-through">
+              <span className="font-sans text-[14px] tabular-nums text-white/35 line-through">
                 ${product.compareAtPrice.toFixed(2)}
               </span>
             )}
-            <span className="font-sans text-[13px] font-medium tabular-nums text-white">
+            <span className="font-sans text-[15px] font-medium tabular-nums text-white">
               ${product.price.toFixed(2)}
             </span>
           </p>
@@ -72,7 +72,7 @@ export const ProductCard = memo(function ProductCard({
               {product.colors.map((c) => (
                 <span
                   key={c}
-                  className="size-2.5 rounded-full ring-1 ring-white/20"
+                  className="size-3 rounded-full ring-1 ring-white/25"
                   style={{ background: c }}
                   aria-hidden
                 />

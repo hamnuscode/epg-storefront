@@ -13,7 +13,7 @@ const img = (id: string) => `/images/${id}.webp`;
 
 export interface CategoryPage {
   slug: string;
-  display: string;
+  display?: string;
   title: string;
   tagline: string;
   backdrop: string;
@@ -25,6 +25,8 @@ export interface CategoryPage {
   categoryBar?: { label: string; images: string[] }[];
   filters: string[];
   categories: string[];
+  /** Collection shows a second select scoped to sport. */
+  sports?: string[];
   secondaryCta: boolean;
   product: { image: string; name: string; label: string; price: number; compareAt: number; colors: string[] };
   count: number;
@@ -135,7 +137,6 @@ export const categoryPages: CategoryPage[] = [
   },
   {
     slug: "collection",
-    display: "Collection",
     title: "Collection",
     tagline: "Premium, limited-edition designs, curated for everyone.",
     backdrop: img("86f34368631c"),
@@ -158,6 +159,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     filters: ["All", "Tops", "Bottoms", "Equipment", "Accessories"],
     categories: ["Select Category", "Equipment", "Apparel", "Accessories"],
+    sports: ["Select Sport", "MMA", "Boxing", "Golf", "Baseball", "Martial Arts"],
     secondaryCta: true,
     product: { image: img("33935de05351"), name: "Head Guard for Training", label: "MMA", price: 69.99, compareAt: 89.99, colors: DOTS },
     count: 9,

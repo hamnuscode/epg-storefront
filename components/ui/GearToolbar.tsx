@@ -9,7 +9,8 @@ import { cn } from "@/lib/cn";
  * away and search takes the full width beside a filter button.
  */
 export function GearToolbar({
-  filters, filter, onFilter, categories, category, onCategory, query, onQuery,
+  filters, filter, onFilter, categories, category, onCategory,
+  sports, sport, onSport, query, onQuery,
 }: {
   filters: readonly string[];
   filter: string;
@@ -17,11 +18,15 @@ export function GearToolbar({
   categories: readonly string[];
   category: string;
   onCategory: (v: string) => void;
+  /** Collection adds a second, sport-scoped select beside the category one. */
+  sports?: readonly string[];
+  sport?: string;
+  onSport?: (v: string) => void;
   query: string;
   onQuery: (v: string) => void;
 }) {
   const control =
-    "h-9 border border-line bg-surface-raised px-3 font-sans text-[11px] text-white/80 outline-none transition-colors focus-visible:border-brand-400";
+    "h-10 border border-line bg-surface-raised px-3 font-sans text-[13px] text-white/80 outline-none transition-colors focus-visible:border-brand-400";
 
   return (
     <div className="flex min-w-0 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -40,13 +45,22 @@ export function GearToolbar({
           <select
             value={category}
             onChange={(e) => onCategory(e.target.value)}
-            className={cn(control, "w-[150px] cursor-pointer")}
+            className={cn(control, "w-[165px] cursor-pointer")}
           >
             {categories.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
         </label>
+
+        {sports && onSport && (
+          <label className="hidden sm:block">
+            <span className="sr-only">Select sport</span>
+            <select value={sport} onChange={(e) => onSport(e.target.value)} className={cn(control, "w-[165px] cursor-pointer")}>
+              {sports.map((s) => (<option key={s} value={s}>{s}</option>))}
+            </select>
+          </label>
+        )}
 
         <label className="relative min-w-0 flex-1 sm:flex-none">
           <span className="sr-only">Search products</span>

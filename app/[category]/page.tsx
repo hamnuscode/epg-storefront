@@ -50,6 +50,7 @@ export default async function CategoryPage({
           products={productsFor(page)}
           filters={page.filters}
           categories={page.categories}
+          sports={page.sports}
         />
       </main>
       <Footer />
